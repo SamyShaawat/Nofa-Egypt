@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'footer-bg': "url('../images/footer-bg.png')",
+      },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"]
       },

@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100;9..40,200;9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900;9..40,1000&display=swap");
 
 @font-face {
@@ -14,16 +13,19 @@ body {
 }
 
 .active {
-  color: #17588E;
+  color: #17588e;
   font-weight: 600;
 }
 .active-black {
-  color: #000;
+  color: black;
   font-weight: 600;
 }
 
 a {
   text-decoration: none;
+}
+.rowadlink {
+  text-decoration: underline;
 }
 
 li {
@@ -35,16 +37,31 @@ li {
   font-size: 70px;
 }
 
+.bg-footer {
+  background-image: "../images/footer-bg.jpg";
+}
+
 .logonavbar {
   width: auto;
   height: 50px;
 }
 
-
 @media (min-width: 768px) {
   .client-name {
-      font-size: 1.25rem /* 20px */;
-      line-height: 1.75rem /* 28px */;
-      width: 380px;
+    font-size: 1.25rem /* 20px */;
+    line-height: 1.75rem /* 28px */;
+    width: 380px;
+  }
+}
+
+@media (min-width: 640px) {
+  .hero-section .container {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 639px) {
+  .hero-section .container {
+    flex-direction: column;
   }
 }

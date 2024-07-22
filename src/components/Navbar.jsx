@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 import { FaBarsStaggered, FaXmark } from "react-icons/fa6";
 import { navItems } from "./../data/constants";
 import { contact } from "./../data/constants";
-
 import { ArrowRight } from "lucide-react";
 
 const Navbar = () => {
@@ -59,14 +58,18 @@ const Navbar = () => {
                 </li>
               ))}
             </ul>
-            <div className="hidden lg:flex justify-center space-x-12 items-center">
-              <a
-                href="/contact-us"
-                className="bg-primary/85 text-white py-2 px-3 rounded-md flex gap-2 scale-100 hover:scale-110 duration-300"
-              >
-                Contact Us <ArrowRight />
-              </a>
-            </div>
+            <ul className="hidden lg:flex justify-center space-x-12 items-center">
+              {contact.map(({ path, title }) => (
+                <li
+                  key={path}
+                  className="bg-primary text-white rounded-md flex gap-2 scale-100 hover:scale-110 duration-300"
+                >
+                  <NavLink to={path} className={({ isActive }) => (isActive ? "font-semibold flex gap-2 py-2 px-3" : "flex gap-2 py-2 px-3")}>
+                  {title} <ArrowRight />
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
 
             {/* mobile menu */}
             <div className="lg:hidden block">
@@ -90,7 +93,7 @@ const Navbar = () => {
               {navItems.map(({ path, title }) => (
                 <li
                   key={path}
-                  className="text-base text-white first:text-white py-1 hover:text-black duration-300 hover:translate-x-1"
+                  className="text-base text-white first:text-white py-1 hover:text-black/70 duration-300 hover:translate-x-1"
                 >
                   <NavLink
                     to={path}
