@@ -1,9 +1,15 @@
 export const navItems = [
-
   { path: "/", title: "Home" },
   { path: "/about-us", title: "About Us" },
-  { path: "/our-products", title: "Products" },
-
+  {
+    path: "/our-products", title: "Products", dropdown: true, subItems: [
+      { path: "/our-products/solid-parquets", title: "Solid Parquets" },
+      { path: "/our-products/mosaic-parquets", title: "Mosaic Parquets" },
+      { path: "/our-products/laser-inlays", title: "Laser Inlays" },
+      { path: "/our-products/outdoor-decking", title: "Outdoor Decking" },
+      { path: "/our-products/garden-furniture", title: "Garden Furniture" },
+    ]
+  },
 ];
 export const contact = [
 
@@ -16,4 +22,6 @@ export const carouselImages = [
   '../images/carouselImages/img2.jpg',
   '../images/carouselImages/img3.jpg',
   '../images/carouselImages/img4.jpg',
+  '../images/carouselImages/img5.jpg',
+  '../images/carouselImages/img6.jpg',
 ];

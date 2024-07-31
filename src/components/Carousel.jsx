@@ -11,11 +11,11 @@ const Carousel = ({ images }) => {
     slidesToShow: 2,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 2000,
   };
 
   return (
-    <div className="w-full p-9  sm:w-1/2">
+    <div className="w-full p-9 sm:w-1/2">
       <Slider {...settings}>
         {images.map((img, idx) => (
           <div key={idx} className="w-96 p-3">
