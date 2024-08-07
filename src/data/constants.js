@@ -25,3 +25,22 @@ export const carouselImages = [
   '../images/carouselImages/img5.jpg',
   '../images/carouselImages/img6.jpg',
 ];
+
+export const woodSpeciesImages = [
+  '../images/woodColors/Afromosia.png',
+  '../images/woodColors/Cherry.png',
+  '../images/woodColors/Doussie.png',
+  '../images/woodColors/Iroko.png',
+  '../images/woodColors/Mahogany.png',
+  '../images/woodColors/Padouk.png',
+  '../images/woodColors/Panga.png',
+  '../images/woodColors/Pine.png',
+  '../images/woodColors/RedOak.png',
+  '../images/woodColors/Sapelli.png',
+  '../images/woodColors/Tali.png',
+  '../images/woodColors/Teak.png',
+  '../images/woodColors/Walnut.png',
+  '../images/woodColors/Wenge.png',
+  '../images/woodColors/WhiteOak.png',
+  '../images/woodColors/YellowPine.png',
+];

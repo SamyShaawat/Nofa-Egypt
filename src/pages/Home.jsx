@@ -1,6 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import Hero from "../components/Hero";
+import WoodSpeciesAndProducts from "../components/WoodSpeciesAndProducts";
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
         Home Page
       </div> */}
       <Hero />
+      <WoodSpeciesAndProducts />
     </>
   );
 };
