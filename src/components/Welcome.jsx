@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const AboutUs = () => {
+const Welcome = () => {
   const navigate = useNavigate();
 
   const handleReadMoreClick = () => {
@@ -27,4 +27,4 @@ const AboutUs = () => {
   );
 };
 
-export default AboutUs;
+export default Welcome;

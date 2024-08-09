@@ -38,9 +38,6 @@ export default {
         '2xl-min': { 'min': '1536px' },
         // => @media (min-width: 1536px) { ... }
       },
-      backgroundImage: {
-        'footer-bg': "url('../images/footer-bg.png')",
-      },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"]
       },

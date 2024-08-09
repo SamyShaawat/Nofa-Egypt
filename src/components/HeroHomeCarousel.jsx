@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const Carousel = ({ images }) => {
+const HeroHomeCarousel = ({ images }) => {
   const settings = {
     dots: false,
     infinite: true,
@@ -31,4 +31,4 @@ const Carousel = ({ images }) => {
   );
 };
 
-export default Carousel;
+export default HeroHomeCarousel;

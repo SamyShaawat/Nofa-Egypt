@@ -16,6 +16,7 @@ body {
   color: #17588e;
   font-weight: 600;
 }
+
 .active-black {
   color: black;
   font-weight: 600;
@@ -24,21 +25,10 @@ body {
 a {
   text-decoration: none;
 }
-.rowadlink {
-  text-decoration: underline;
-}
+
 
 li {
   list-style: none;
-}
-
-.footerlogo {
-  font-family: "Copperplate Gothic", serif;
-  font-size: 70px;
-}
-
-.bg-footer {
-  background-image: "../images/footer-bg.jpg";
 }
 
 .logonavbar {
@@ -46,103 +36,7 @@ li {
   height: 50px;
 }
 
-.beehive-grid {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr); /* Adjust the number of columns as needed */
-  gap: 5px; /* Adjust the gap as needed */
-  position: relative;
-  justify-content: center; /* Center the grid */
-}
 
-.beehive-grid div {
-  position: relative;
-}
-
-.beehive-grid img {
-  width: 100%;
-  height: auto;
-}
-
-/* Position the hexagons to create the beehive pattern */
-.beehive-grid .beehive-item:nth-child(1) {
-  grid-column: 1;
-  grid-row: 2;
-}
-
-.beehive-grid .beehive-item:nth-child(2) {
-  grid-column: 1;
-  grid-row: 4;
-}
-
-.beehive-grid .beehive-item:nth-child(3) {
-  grid-column: 1;
-  grid-row: 6;
-}
-
-.beehive-grid .beehive-item:nth-child(4) {
-  grid-column: 2;
-  grid-row: 1;
-}
-
-.beehive-grid .beehive-item:nth-child(5) {
-  grid-column: 2;
-  grid-row: 3;
-}
-
-.beehive-grid .beehive-item:nth-child(6) {
-  grid-column: 2;
-  grid-row: 5;
-}
-
-.beehive-grid .beehive-item:nth-child(7) {
-  grid-column: 2;
-  grid-row: 7;
-}
-
-.beehive-grid .beehive-item:nth-child(8) {
-  grid-column: 3;
-  grid-row: 2;
-}
-
-.beehive-grid .beehive-item:nth-child(9) {
-  grid-column: 3;
-  grid-row: 4;
-}
-
-.beehive-grid .beehive-item:nth-child(10) {
-  grid-column: 3;
-  grid-row: 6;
-}
-
-.beehive-grid .beehive-item:nth-child(11) {
-  grid-column: 4;
-  grid-row: 1;
-}
-
-.beehive-grid .beehive-item:nth-child(12) {
-  grid-column: 4;
-  grid-row: 3;
-}
-
-.beehive-grid .beehive-item:nth-child(13) {
-  grid-column: 4;
-  grid-row: 5;
-}
-
-.beehive-grid .beehive-item:nth-child(14) {
-  grid-column: 4;
-  grid-row: 7;
-}
-
-.beehive-grid .beehive-item:nth-child(15) {
-  grid-column: 5;
-  grid-row: 2;
-}
-
-.beehive-grid .beehive-item:nth-child(16) {
-  grid-column: 5;
-  grid-row: 4;
-}
 
 
 @media (min-width: 768px) {

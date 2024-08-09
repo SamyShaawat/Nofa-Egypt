@@ -9,6 +9,7 @@ import MosaicParquets from "../pages/MosaicParquets";
 import LaserInlays from "../pages/LaserInlays";
 import OutdoorDecking from "../pages/OutdoorDecking";
 import GardenFurniture from "../pages/GardenFurniture";
+import EventsNews from "../pages/EventsNews";
 
 const Router = createBrowserRouter([
   {
@@ -23,6 +24,7 @@ const Router = createBrowserRouter([
       { path: "/our-products/laser-inlays", element: <LaserInlays /> },
       { path: "/our-products/outdoor-decking", element: <OutdoorDecking /> },
       { path: "/our-products/garden-furniture", element: <GardenFurniture /> },
+      { path: "/events-news", element: <EventsNews /> },
       { path: "/contact-us", element: <Contact /> },
     ],
   },
