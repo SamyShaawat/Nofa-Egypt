@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react'
 
 const Footer = () => {
@@ -6,4 +7,14 @@ const Footer = () => {
   )
 }
 
+=======
+import React from 'react'
+
+const Footer = () => {
+  return (
+    <div>Footer</div>
+  )
+}
+
+>>>>>>> origin/main
 export default Footer
