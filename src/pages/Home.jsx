@@ -1,7 +1,10 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import Hero from "../components/Hero";
-
+import Partners from "../components/Partners";
+import Productsbtn from "../components/Productsbtn";
+import OurProducts from "../components/OurProducts";
+import { woodSpeciesImages } from "../data/constants";
 const Home = () => {
   return (
     <>
@@ -12,9 +15,11 @@ const Home = () => {
         Home Page
       </div> */}
       <Hero />
+      <OurProducts images={woodSpeciesImages} />
+      <Partners />
+      <Productsbtn />
     </>
   );
 };
 
 export default Home;
-
