@@ -1,5 +1,12 @@
 import React from "react";
-
+import {
+  FaFacebook,
+  FaInstagram,
+  FaLinkedin,
+  FaXTwitter,
+  // FaFax,
+  // FaLocationDot,
+} from "react-icons/fa6";
 const Footer = () => {
   return (
     <div>
@@ -18,7 +25,10 @@ const Footer = () => {
             <h3 className="text-lg font-semibold">Site Navigation</h3>
             <ul>
               <li className="my-2">
-                <a href="/" className="text-gray-600   hover:text-primary ">
+                <a
+                  href="/"
+                  className="text-gray-600   hover:text-primary cursor-pointer hover:translate-x-1 duration-300"
+                >
                   Home
                 </a>
               </li>
@@ -67,7 +77,6 @@ const Footer = () => {
                 alt="ISO Certified"
                 className="w-24 h-24"
               />
-
             </div>
           </div>
           {/* Contact Information */}
@@ -99,18 +108,22 @@ const Footer = () => {
               <li className="my-2 text-gray-600">
                 <a href="tel:+201157670090">(2) 01157670090</a>
               </li>
+              {/* Social Media handles */}
+              <div className="flex items-center gap-4 mt-2">
+                <a href="#" className="scale-100 hover:scale-110 duration-300">
+                  <FaFacebook className="text-2xl hover:text-primary scale-100 hover:scale-110 duration-300" />
+                </a>
+                <a href="#" className="scale-100 hover:scale-110 duration-300">
+                  <FaInstagram className="text-2xl hover:text-primary scale-100 hover:scale-110 duration-300" />
+                </a>
+                {/* <a href="#" className="scale-100 hover:scale-110 duration-300">
+                  <FaLinkedin className="text-2xl hover:text-primary scale-100 hover:scale-110 duration-300" />
+                </a> */}
+                <a href="#" className="scale-100 hover:scale-110 duration-300">
+                  <FaXTwitter className="text-2xl hover:text-primary scale-100 hover:scale-110 duration-300" />
+                </a>
+              </div>
             </ul>
-            <div className="flex mt-4 space-x-4">
-              <a href="#" className="text-gray-600 hover:text-blue-600">
-                <i className="fab fa-facebook-f"></i>
-              </a>
-              <a href="#" className="text-gray-600 hover:text-blue-600">
-                <i className="fab fa-twitter"></i>
-              </a>
-              <a href="#" className="text-gray-600 hover:text-blue-600">
-                <i className="fab fa-linkedin-in"></i>
-              </a>
-            </div>
           </div>
         </div>
       </footer>
