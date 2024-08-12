@@ -28,40 +28,38 @@ export const carouselImages = [
 
 export const woodSpeciesImages = [
   [
-    { src: "../images/woodColors/Afromosia.png", alt: "Afromosia" },
-    { src: "../images/woodColors/Cherry.png", alt: "Cherry" },
+    { src: "../images/woodColors/Afromosia.png", title: "Afromosia" },
+    { src: "../images/woodColors/Cherry.png", title: "Cherry" },
   ],
   [
-    { src: "../images/woodColors/Doussie.png", alt: "Doussie" },
-    { src: "../images/woodColors/Iroko.png", alt: "Iroko" },
-    { src: "../images/woodColors/Mahogany.png", alt: "Mahogany" },
+    { src: "../images/woodColors/Doussie.png", title: "Doussie" },
+    { src: "../images/woodColors/Iroko.png", title: "Iroko" },
+    { src: "../images/woodColors/Mahogany.png", title: "Mahogany" },
   ],
   [
-    { src: "../images/woodColors/Padouk.png", alt: "Padouk" },
-    { src: "../images/woodColors/Panga.png", alt: "Panga" },
+    { src: "../images/woodColors/Padouk.png", title: "Padouk" },
+    { src: "../images/woodColors/Panga.png", title: "Panga" },
   ],
   [
-    { src: "../images/woodColors/Pine.png", alt: "Pine" },
-    { text: "Our Products", isCenter: true },
-    { src: "../images/woodColors/RedOak.png", alt: "Red Oak" },
+    { src: "../images/woodColors/Pine.png", title: "Pine" },
+    { text: "Our Products",isCenter: true },
+    { src: "../images/woodColors/RedOak.png", title: "Red Oak" },
   ],
   [
-    { src: "../images/woodColors/Tali.png", alt: "Tali" },
-    { src: "../images/woodColors/Sapelli.png", alt: "Sapelli" },
+    { src: "../images/woodColors/Tali.png", title: "Tali" },
+    { src: "../images/woodColors/Sapelli.png", title: "Sapelli" },
   ],
   [
-    { src: "../images/woodColors/Teak.png", alt: "Teak" },
-    { src: "../images/woodColors/Walnut.png", alt: "Walnut" },
-    { src: "../images/woodColors/Wenge.png", alt: "Wenge" },
+    { src: "../images/woodColors/Teak.png", title: "Teak" },
+    { src: "../images/woodColors/Walnut.png", title: "Walnut" },
+    { src: "../images/woodColors/Wenge.png", title: "Wenge" },
   ],
   [
-    { src: "../images/woodColors/YellowPine.png", alt: "Yellow Pine" },
-    { src: "../images/woodColors/Pine.png", alt: "Pine" },
+    { src: "../images/woodColors/YellowPine.png", title: "Yellow Pine" },
+    { src: "../images/woodColors/Pine.png", title: "Pine" },
   ],
 ];
 
-
-// data/constants.js
 export const productsgroups = [
   { name: "Solid Parquets", link: "our-products/solid-parquets" },
   { name: "Mosaic Parquets", link: "our-products/mosaic-parquets" },

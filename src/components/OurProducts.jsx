@@ -3,31 +3,68 @@ import { woodSpeciesImages } from "../data/constants";
 
 const OurProducts = () => {
   return (
-    <div className="flex   justify-center items-center  mt-10 flex-wrap w-full px-4    ">
-      {woodSpeciesImages.map((column, columnIndex) => (
-        <div
-          key={columnIndex}
-          className="flex flex-col  items-center space-y-2   mb-4  "
-        >
-          {column.map((item, itemIndex) =>
-            item.isCenter ? (
-              <p
-                key={itemIndex}
-                className="text-xl sm:text-lg md:text-2xl text-center font-bold my-2"
-              >
-                {item.text}
-              </p>
-            ) : (
-              <img
-                key={itemIndex}
-                src={item.src}
-                className="w-20 h-16 sm:w-24 sm:h-20 md:w-28 md:h-24 lg:w-32 lg:h-28 mb-2 object-cover"
-                alt={item.alt}
-              />
-            )
-          )}
-        </div>
-      ))}
+    <div className="flex flex-col justify-center items-center mt-10 w-full px-4">
+      {/* Text displayed on top for mobile and tablet screens */}
+      <h2 className="text-2xl font-bold mb-4 text-center md:hidden">
+        Our Products
+      </h2>
+      
+      {/* Mobile and Tablet Layout - 4 images per row */}
+      <div className="md:hidden grid grid-cols-4 gap-4">
+        {woodSpeciesImages.flat().map((item, index) => (
+          !item.isCenter && ( // Skip the "Our Products" text item
+            <div key={index} className="relative w-20 h-20 sm:w-24 sm:h-24">
+              <img src={item.src} className="w-full h-full" alt={item.title} />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <p className="text-sm sm:text-xs md:text-sm lg:text-base text-white font-bold">
+                  {item.title}
+                </p>
+              </div>
+            </div>
+          )
+        ))}
+      </div>
+
+      {/* Original layout preserved for laptop screens */}
+      <div className="hidden md:flex flex-row justify-center items-center w-full">
+        {woodSpeciesImages.map((column, columnIndex) => (
+          <div
+            key={columnIndex}
+            className={`flex flex-col justify-center items-center 
+                        space-y-4 mb-4 w-full md:w-auto`}
+          >
+            {column.map((item, itemIndex) =>
+              item.isCenter ? (
+                <div
+                  key={itemIndex}
+                  className="flex justify-center items-center bg-transparent border border-white w-28 h-28 
+                             sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 rounded-full"
+                >
+                  <p className="text-xl sm:text-lg md:text-2xl text-black text-center font-bold">
+                    {item.text}
+                  </p>
+                </div>
+              ) : (
+                <div
+                  key={itemIndex}
+                  className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32"
+                >
+                  <img
+                    src={item.src}
+                    className="w-full h-full"
+                    alt={item.title}
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <p className="text-sm sm:text-xs md:text-sm lg:text-base text-white font-bold">
+                      {item.title}
+                    </p>
+                  </div>
+                </div>
+              )
+            )}
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
