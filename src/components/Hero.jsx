@@ -5,15 +5,15 @@ import { carouselImages } from "../data/constants";
 
 const Hero = () => {
   return (
-    // Container for the hero section, with margin-top to offset the fixed navbar
-    <div className="mt-20 container mx-auto flex flex-col sm:flex-row items-center justify-between">
-      {/* About Us section on the left side */}
+    <div className="mt-24 container mx-auto flex flex-col lg:flex-row items-center justify-between">
+      {/* Welcome section on the left side */}
       <Welcome />
       {/* Carousel section on the right side */}
-      <HeroHomeCarousel images={carouselImages} />
+      <div className="w-full lg:w-2/3">
+        <HeroHomeCarousel images={carouselImages} />
+      </div>
     </div>
   );
 };
 
 export default Hero;
-

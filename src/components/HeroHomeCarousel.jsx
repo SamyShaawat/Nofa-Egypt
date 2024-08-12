@@ -1,28 +1,64 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const HeroHomeCarousel = ({ images }) => {
+  const [slidesToShow, setSlidesToShow] = useState(3); // Default to 3 for large screens
+
+  useEffect(() => {
+    const updateSlidesToShow = () => {
+      const screenWidth = window.innerWidth;
+      if (screenWidth < 640) {
+        setSlidesToShow(1); // Mobile screens
+      } else if (screenWidth < 1024) {
+        setSlidesToShow(2); // Tablet screens
+      } else {
+        setSlidesToShow(3); // Laptop screens and larger
+      }
+    };
+
+    updateSlidesToShow(); // Initial check
+    window.addEventListener("resize", updateSlidesToShow);
+
+    return () => {
+      window.removeEventListener("resize", updateSlidesToShow);
+    };
+  }, []);
+
   const settings = {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 2,
+    slidesToShow: slidesToShow,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 1500,
   };
 
   return (
-    <div className="w-full p-9 sm:w-1/2">
+    <div className="w-full p-4">
       <Slider {...settings}>
         {images.map((img, idx) => (
-          <div key={idx} className="w-96 p-3">
+          <div key={idx} className="p-2">
             <img
               src={img}
               alt={`Slide ${idx}`}
-              className="w-96 h-auto rounded-md"
+              className="object-cover rounded-md mx-auto"
+              style={{
+                width:
+                  slidesToShow === 1
+                    ? "250px" // Mobile screen width
+                    : slidesToShow === 2
+                    ? "300px" // Tablet screen width
+                    : "350px", // Laptop and larger screen width
+                height:
+                  slidesToShow === 1
+                    ? "400px" // Mobile screen height
+                    : slidesToShow === 2
+                    ? "500px" // Tablet screen height
+                    : "600px", // Laptop and larger screen height
+              }}
             />
           </div>
         ))}
@@ -32,4 +68,3 @@ const HeroHomeCarousel = ({ images }) => {
 };
 
 export default HeroHomeCarousel;
-

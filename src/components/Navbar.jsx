@@ -68,8 +68,13 @@ const Navbar = () => {
               {navItems.map(({ path, title, dropdown, subItems }, index) => (
                 <li
                   key={path}
-                  className="relative text-base text-black hover:text-primary duration-300 flex items-center"
+                  className="relative text-base text-black hover:text-primary duration-300 flex items-center group"
                   ref={(el) => (dropdownRefs.current[index] = el)}
+                  onMouseEnter={() => dropdown && toggleDropdown(index)}
+                  onMouseLeave={() => dropdown && setIsDropdownOpen((prevState) => ({
+                    ...prevState,
+                    [index]: false,
+                  }))}
                 >
                   <NavLink
                     to={path}
@@ -78,37 +83,33 @@ const Navbar = () => {
                     {title}
                   </NavLink>
                   {dropdown && (
-                    <button
-                      onClick={() => toggleDropdown(index)}
-                      className="ml-2"
-                    >
-                      {isDropdownOpen[index] ? (
-                        <ChevronUp className="active" />
-                      ) : (
-                        <ChevronDown className="hover:active duration-300" />
-                      )}
-                    </button>
-                  )}
-
-                  {dropdown && isDropdownOpen[index] && (
-                    <ul className="absolute left-0 top-full mt-2 bg-white shadow-lg rounded-md whitespace-nowrap">
-                      {subItems.map((subItem) => (
-                        <li
-                          key={subItem.path}
-                          className="px-4 py-2 hover:bg-gray-100 text-black hover:text-primary duration-300"
-                        >
-                          <NavLink
-                            to={subItem.path}
-                            className="block"
-                            onClick={() =>
-                              handleNavLinkClick(subItem.path, index)
-                            }
+                    <>
+                      <div className="ml-2">
+                        {isDropdownOpen[index] ? <ChevronUp /> : <ChevronDown />}
+                      </div>
+                      <ul
+                        className={`absolute left-0 top-full mt-2 bg-white shadow-lg rounded-md whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
+                          isDropdownOpen[index] ? "opacity-100" : ""
+                        }`}
+                      >
+                        {subItems.map((subItem) => (
+                          <li
+                            key={subItem.path}
+                            className="px-4 py-2 hover:bg-gray-100 text-black hover:text-primary duration-300"
                           >
-                            {subItem.title}
-                          </NavLink>
-                        </li>
-                      ))}
-                    </ul>
+                            <NavLink
+                              to={subItem.path}
+                              className="block"
+                              onClick={() =>
+                                handleNavLinkClick(subItem.path, index)
+                              }
+                            >
+                              {subItem.title}
+                            </NavLink>
+                          </li>
+                        ))}
+                      </ul>
+                    </>
                   )}
                 </li>
               ))}
@@ -155,35 +156,41 @@ const Navbar = () => {
               {navItems.map(({ path, title, dropdown, subItems }, index) => (
                 <li
                   key={path}
-                  className="text-base text-white first:text-white py-1 hover:text-black/70 duration-300"
+                  className="relative text-base text-white py-1 hover:text-black/70 duration-300"
+                  onMouseEnter={() => dropdown && toggleDropdown(index)}
+                  onMouseLeave={() =>
+                    dropdown && setIsDropdownOpen((prevState) => ({
+                      ...prevState,
+                      [index]: false,
+                    }))
+                  }
                 >
-                  <NavLink
-                    to={path}
-                    className={({ isActive }) =>
-                      isActive ? "active-black" : ""
-                    }
-                    onClick={() => handleNavLinkClick(path)}
-                  >
-                    {title}
-                  </NavLink>
-                  {dropdown && (
-                    <button
-                      onClick={() => toggleDropdown(index)}
-                      className="ml-2"
+                  <div className="flex items-center">
+                    <NavLink
+                      to={path}
+                      className={({ isActive }) =>
+                        isActive ? "active-black" : ""
+                      }
+                      onClick={() => handleNavLinkClick(path)}
                     >
-                      {isDropdownOpen[index] ? (
-                        <ChevronUp className="w-4 h-3.5 active-black" />
-                      ) : (
-                        <ChevronDown className="w-4 h-3.5 hover:active-black duration-300" />
-                      )}
-                    </button>
-                  )}
-                  {dropdown && isDropdownOpen[index] && (
-                    <ul className="pl-4 mt-2">
+                      {title}
+                    </NavLink>
+                    {dropdown && (
+                      <div className="ml-2">
+                        {isDropdownOpen[index] ? <ChevronUp /> : <ChevronDown />}
+                      </div>
+                    )}
+                  </div>
+                  {dropdown && (
+                    <ul
+                      className={`pl-4 mt-2 ${
+                        isDropdownOpen[index] ? "block" : "hidden"
+                      }`}
+                    >
                       {subItems.map((subItem) => (
                         <li
                           key={subItem.path}
-                          className="py-1 text-white first:text-white hover:text-black/70"
+                          className="py-1 text-white hover:text-black/70"
                         >
                           <NavLink
                             to={subItem.path}
@@ -229,4 +236,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

@@ -7,7 +7,7 @@ const Products = () => {
       <Helmet>
         <title>Nofa Egypt | Products</title>
       </Helmet>
-      <div className="text-center text-3xl mt-64 font-semibold min-h-[500px]">
+      <div className="text-center text-3xl mt-64 font-semibold min-h-[150px]">
         Products Page
       </div>
     </>
