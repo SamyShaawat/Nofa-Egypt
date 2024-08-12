@@ -10,7 +10,7 @@ const Welcome = () => {
     navigate("/about-us");
   };
   return (
-    <div className="w-96 p-3 mt-7 lg:mb-56  md:w-1/2">
+    <div className="w-96 p-0 mt-7 lg:mb-56  md:w-1/2">
       <h2 className="text-4xl font-bold mb-4">
         Welcome to <span className="text-primary">NOFA EGYPT</span>
       </h2>

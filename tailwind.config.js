@@ -8,7 +8,7 @@ export default {
 
     extend: {
       screens: {
-        'sm-max': { 'max': '639px' },
+        'sm-max': { 'max': '765px' },
         // => @media (max-width: 639px) 
 
         'md-max': { 'max': '767px' },

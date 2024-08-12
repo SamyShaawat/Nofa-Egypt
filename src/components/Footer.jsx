@@ -3,11 +3,15 @@ import React from "react";
 const Footer = () => {
   return (
     <div>
-      <footer className="bg-[#f8f8f8] border-t-2 border-slate-200 py-8">
+      <footer className="bg-[#e6e6e6] border-t-2 border-slate-300 py-8">
         <div className="max-w-7xl mx-auto px-4 flex flex-wrap justify-between">
           {/* Logo Section */}
           <div className="w-full md:w-1/4 mb-6 md:mb-0">
-            <img src="../images/logo-without-bg.png" alt="" className="w-40" />
+            <img
+              src="../images/logo-without-bg.png"
+              alt=""
+              className="w-auto h-36"
+            />
           </div>
           {/* Shop Links */}
           <div className="w-full md:w-1/4 mb-6 md:mb-0">
@@ -59,10 +63,11 @@ const Footer = () => {
             </ul>
             <div className="mt-4">
               <img
-                src="../images/certificates/ISO9001_GB__RGB.jpg"
+                src="../images/certificates/ISO.png"
                 alt="ISO Certified"
-                className="w-24"
+                className="w-24 h-24"
               />
+
             </div>
           </div>
           {/* Contact Information */}
@@ -89,9 +94,7 @@ const Footer = () => {
                 <a href="tel:+2022630970">(202) 2630970</a>
               </li>
               <li className="my-2 text-gray-600">
-                <a href="tel:+2033623931">
-                  (203) 3623931 / (203)
-                </a>
+                <a href="tel:+2033623931">(203) 3623931 / (203)</a>
               </li>
               <li className="my-2 text-gray-600">
                 <a href="tel:+201157670090">(2) 01157670090</a>

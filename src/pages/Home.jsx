@@ -15,9 +15,9 @@ const Home = () => {
         Home Page
       </div> */}
       <Hero />
+      <Partners />
       <OurProducts images={woodSpeciesImages} />
       <Productsbtn />
-      <Partners />
     </>
   );
 };
