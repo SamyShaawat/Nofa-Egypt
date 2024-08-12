@@ -16,8 +16,8 @@ const Home = () => {
       </div> */}
       <Hero />
       <OurProducts images={woodSpeciesImages} />
-      <Partners />
       <Productsbtn />
+      <Partners />
     </>
   );
 };

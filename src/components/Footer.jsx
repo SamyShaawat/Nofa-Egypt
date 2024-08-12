@@ -3,15 +3,15 @@ import React from "react";
 const Footer = () => {
   return (
     <div>
-      <footer className="bg-white border-t-2 border-blue-500 py-8">
+      <footer className="bg-[#f8f8f8] border-t-2 border-slate-200 py-8">
         <div className="max-w-7xl mx-auto px-4 flex flex-wrap justify-between">
           {/* Logo Section */}
           <div className="w-full md:w-1/4 mb-6 md:mb-0">
-            <img src="../images/logo.png" alt="" className="w-40" />
+            <img src="../images/logo-without-bg.png" alt="" className="w-40" />
           </div>
           {/* Shop Links */}
           <div className="w-full md:w-1/4 mb-6 md:mb-0">
-            <h3 className="text-lg font-semibold">Shop</h3>
+            <h3 className="text-lg font-semibold">Site Navigation</h3>
             <ul>
               <li className="my-2">
                 <a href="/" className="text-gray-600   hover:text-primary ">
@@ -89,7 +89,7 @@ const Footer = () => {
                 <a href="tel:+2022630970">(202) 2630970</a>
               </li>
               <li className="my-2 text-gray-600">
-                <a href="tel:+2033623931" c>
+                <a href="tel:+2033623931">
                   (203) 3623931 / (203)
                 </a>
               </li>

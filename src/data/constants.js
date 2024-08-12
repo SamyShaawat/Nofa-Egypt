@@ -27,20 +27,45 @@ export const carouselImages = [
 ];
 
 export const woodSpeciesImages = [
-  "../images/woodColors/Afromosia.png",
-  "../images/woodColors/Cherry.png",
-  "../images/woodColors/Doussie.png",
-  "../images/woodColors/Iroko.png",
-  "../images/woodColors/Mahogany.png",
-  "../images/woodColors/Padouk.png",
-  "../images/woodColors/Panga.png",
-  "../images/woodColors/Pine.png",
-  "../images/woodColors/RedOak.png",
-  "../images/woodColors/Sapelli.png",
-  "../images/woodColors/Tali.png",
-  "../images/woodColors/Teak.png",
-  "../images/woodColors/Walnut.png",
-  "../images/woodColors/Wenge.png",
-  "../images/woodColors/WhiteOak.png",
-  "../images/woodColors/YellowPine.png",
+  [
+    { src: "../images/woodColors/Afromosia.png", alt: "Afromosia" },
+    { src: "../images/woodColors/Cherry.png", alt: "Cherry" },
+  ],
+  [
+    { src: "../images/woodColors/Doussie.png", alt: "Doussie" },
+    { src: "../images/woodColors/Iroko.png", alt: "Iroko" },
+    { src: "../images/woodColors/Mahogany.png", alt: "Mahogany" },
+  ],
+  [
+    { src: "../images/woodColors/Padouk.png", alt: "Padouk" },
+    { src: "../images/woodColors/Panga.png", alt: "Panga" },
+  ],
+  [
+    { src: "../images/woodColors/Pine.png", alt: "Pine" },
+    { text: "Our Products", isCenter: true },
+    { src: "../images/woodColors/RedOak.png", alt: "Red Oak" },
+  ],
+  [
+    { src: "../images/woodColors/Tali.png", alt: "Tali" },
+    { src: "../images/woodColors/Sapelli.png", alt: "Sapelli" },
+  ],
+  [
+    { src: "../images/woodColors/Teak.png", alt: "Teak" },
+    { src: "../images/woodColors/Walnut.png", alt: "Walnut" },
+    { src: "../images/woodColors/Wenge.png", alt: "Wenge" },
+  ],
+  [
+    { src: "../images/woodColors/YellowPine.png", alt: "Yellow Pine" },
+    { src: "../images/woodColors/Pine.png", alt: "Pine" },
+  ],
+];
+
+
+// data/constants.js
+export const productsgroups = [
+  { name: "Solid Parquets", link: "our-products/solid-parquets" },
+  { name: "Mosaic Parquets", link: "our-products/mosaic-parquets" },
+  { name: "Laser Inlays", link: "our-products/laser-inlays" },
+  { name: "Outdoor Decking", link: "our-products/outdoor-decking" },
+  { name: "Garden Furniture", link: "our-products/garden-furniture" }
 ];
