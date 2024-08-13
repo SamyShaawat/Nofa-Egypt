@@ -7,6 +7,8 @@ const NextArrow = (props) => {
   const { onClick } = props;
   return (
     <div
+      data-aos="fade-up"
+      data-aos-delay="400"
       className="absolute top-1/2 transform -translate-y-1/2 right-0 z-10 cursor-pointer text-3xl text-gray-700 hover:text-gray-900"
       onClick={onClick}
     >
@@ -19,6 +21,8 @@ const PrevArrow = (props) => {
   const { onClick } = props;
   return (
     <div
+      data-aos="fade-up"
+      data-aos-delay="400"
       className="absolute top-1/2 transform -translate-y-1/2 left-0 z-10 cursor-pointer text-3xl text-gray-700 hover:text-gray-900"
       onClick={onClick}
     >
@@ -41,7 +45,7 @@ const Partners = () => {
   };
 
   return (
-    <div className="bg-gray-200">
+    <div data-aos="fade-up" data-aos-delay="200" className="bg-gray-200">
       <section className="container mx-auto px-4 py-8 relative">
         {/* Large screens (laptops) */}
         <div className="hidden lg:block">
@@ -52,6 +56,8 @@ const Partners = () => {
                 className="p-4 flex justify-center items-center"
               >
                 <a
+                  data-aos="fade-up"
+                  data-aos-delay="400"
                   href={partner.linkWebsite}
                   target="_blank"
                   rel="noopener noreferrer"

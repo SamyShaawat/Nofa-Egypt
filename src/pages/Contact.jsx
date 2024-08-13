@@ -7,7 +7,7 @@ const Contact = () => {
       <Helmet>
         <title>Nofa Egypt | Contact Us</title>
       </Helmet>
-      <div className="text-center text-3xl mt-64 font-semibold min-h-[150px]">
+      <div className="text-center text-3xl mt-64 font-semibold min-h-[105px]">
         Contact Us Page
       </div>
     </>

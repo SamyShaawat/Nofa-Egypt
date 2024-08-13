@@ -19,6 +19,8 @@ const Footer = () => {
             {/* Logo Section */}
             <div className="text-left">
               <img
+                data-aos="zoom-in"
+                data-aos-delay="300"
                 src="../images/logo-without-bg.png"
                 alt=""
                 className="w-auto h-64 mx-auto md:mx-0"
@@ -26,7 +28,7 @@ const Footer = () => {
             </div>
             {/* Shop Links */}
             <div className="text-left">
-              <div>
+              <div data-aos="zoom-in" data-aos-delay="400">
                 <h3 className="text-lg font-semibold mb-2">Site Navigation</h3>
                 <ul className="space-y-1">
                   {navItems.map((link) => (
@@ -52,11 +54,11 @@ const Footer = () => {
             </div>
             {/* Offices Information */}
             <div className="text-left">
-              <div>
+              <div data-aos="zoom-in" data-aos-delay="500">
                 <h3 className="text-lg font-semibold mb-2">Offices</h3>
                 <ul className="space-y-1">
-                  <li className="flex cursor-pointer hover:translate-x-1 duration-300 hover:text-primary items-center text-slate-900 gap-1 mb-1">
-                    <FaLocationDot className="text-xl sm:text-2xl" />
+                  <li className="flex cursor-pointer hover:translate-x-1 duration-300 hover:text-primary items-center text-slate-900 gap-1 mb-3">
+                    <FaLocationDot className="text-xl sm:text-2xl mr-2" />
                     <a
                       href="https://www.google.com/maps/dir/31.2382831,29.9627838/56+Nehro,+El-Montaza,+Heliopolis,+Cairo+Governorate+4460134/@30.6369557,29.2354185,8z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x1458158f75ba3379:0xad9c5e2e3b3b58ce!2m2!1d31.3210333!2d30.101714?entry=ttu"
                       target="_blank"
@@ -66,8 +68,8 @@ const Footer = () => {
                       Egypt.
                     </a>
                   </li>
-                  <li className="flex cursor-pointer hover:translate-x-1 duration-300 hover:text-primary items-center text-slate-900 gap-1 mb-1">
-                    <FaLocationDot className="text-xl sm:text-2xl" />
+                  <li className="flex cursor-pointer hover:translate-x-1 duration-300 hover:text-primary items-center text-slate-900 gap-1 mb-3">
+                    <FaLocationDot className="text-xl sm:text-2xl mr-2" />
                     <a
                       href="https://www.google.com/maps/place/Mansheya,+Alexandria+Governorate/@31.198108,29.8802942,15z/data=!3m1!4b1!4m6!3m5!1s0x14f5c3e12aa23501:0x9457520867d4818!8m2!3d31.1993167!4d29.8916441!16s%2Fg%2F1tdrbqkb?entry=ttu"
                       target="_blank"
@@ -88,28 +90,28 @@ const Footer = () => {
             </div>
             {/* Contact Information */}
             <div className="text-left">
-              <div>
+              <div data-aos="zoom-in" data-aos-delay="600">
                 <h3 className="text-lg font-semibold mb-2">Contact Us</h3>
                 <ul className="space-y-1">
-                  <li className="flex cursor-pointer hover:translate-x-1 duration-300 hover:text-primary items-center text-slate-900 gap-1 mb-2">
+                  <li className="flex cursor-pointer hover:translate-x-1 duration-300 hover:text-primary items-center text-slate-900 gap-1 mb-3">
                     <IoMail className="text-xl sm:text-2xl" />
-                    <a href="mailto:cairo@nofafloors.com">cairo@nofafloors.com</a>
+                    <a href="mailto:cairo@nofaegypt.com">cairo@nofaegypt.com</a>
                   </li>
-                  <li className="flex cursor-pointer hover:translate-x-1 duration-300 hover:text-primary items-center text-slate-900 gap-1 mb-2">
+                  <li className="flex cursor-pointer hover:translate-x-1 duration-300 hover:text-primary items-center text-slate-900 gap-1 mb-3">
                     <IoMail className="text-xl sm:text-2xl" />
-                    <a href="mailto:sales@nofafloors.com">sales@nofafloors.com</a>
+                    <a href="mailto:sales@nofaegypt.com">sales@nofaegypt.com</a>
                   </li>
-                  <li className="flex cursor-pointer hover:translate-x-1 duration-300 hover:text-primary items-center text-slate-900 gap-1 mb-2">
+                  <li className="flex cursor-pointer hover:translate-x-1 duration-300 hover:text-primary items-center text-slate-900 gap-1 mb-3">
                     <MdPhone className="text-xl sm:text-2xl" />
                     <a href="tel:+201157670090">+20 115 767 0090</a>
                   </li>
-                  <li className="flex cursor-pointer hover:translate-x-1 duration-300 hover:text-primary items-center text-slate-900 gap-1 mb-2">
+                  <li className="flex cursor-pointer hover:translate-x-1 duration-300 hover:text-primary items-center text-slate-900 gap-1 mb-3">
                     <MdPhone className="text-xl sm:text-2xl" />
-                    <a href="tel:+2022630970">+202 263 0970</a>
+                    <a href="tel:+2022630970">+20 226 30970</a>
                   </li>
-                  <li className="flex cursor-pointer hover:translate-x-1 duration-300 hover:text-primary items-center text-slate-900 gap-1 mb-2">
+                  <li className="flex cursor-pointer hover:translate-x-1 duration-300 hover:text-primary items-center text-slate-900 gap-1 mb-3">
                     <MdPhone className="text-xl sm:text-2xl" />
-                    <a href="tel:+2033623931">+203 362 3931</a>
+                    <a href="tel:+2033623931">+20 336 23931</a>
                   </li>
                   {/* Social Media handles */}
                   <div className="flex items-center gap-3 p-2">
@@ -119,7 +121,7 @@ const Footer = () => {
                       rel="noopener noreferrer"
                       className="scale-100 hover:scale-110 duration-300"
                     >
-                      <FaFacebook className="text-2xl hover:text-primary scale-100 hover:scale-110 duration-300" />
+                      <FaFacebook className="text-2xl  hover:text-primary scale-100 hover:scale-110 duration-300" />
                     </a>
                     <a
                       href="https://wa.me/201157670090"

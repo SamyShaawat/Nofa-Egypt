@@ -2,7 +2,7 @@ import React from "react";
 
 const GardenFurniture = () => {
   return (
-    <div className="text-center text-3xl mt-64 font-semibold min-h-[150px]">
+    <div className="text-center text-3xl mt-64 font-semibold min-h-[105px]">
       Garden Furniture Page
     </div>
   );

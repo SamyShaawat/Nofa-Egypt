@@ -28,44 +28,44 @@ export const carouselImages = [
 
 export const woodSpeciesImages = [
   [
-    { src: "../images/woodColors/Afromosia.png", title: "Afromosia" },
-    { src: "../images/woodColors/Cherry.png", title: "Cherry" },
+    { src: "../images/woodColors/Afromosia.png", title: "Afromosia", aosDelay: "0", delayTitle: "100", },
+    { src: "../images/woodColors/Cherry.png", title: "Cherry", aosDelay: "100", delayTitle: "200", },
   ],
   [
-    { src: "../images/woodColors/Doussie.png", title: "Doussie" },
-    { src: "../images/woodColors/Iroko.png", title: "Iroko" },
-    { src: "../images/woodColors/Mahogany.png", title: "Mahogany" },
+    { src: "../images/woodColors/Doussie.png", title: "Doussie", aosDelay: "200", delayTitle: "300", },
+    { src: "../images/woodColors/Iroko.png", title: "Iroko", aosDelay: "300", delayTitle: "400", },
+    { src: "../images/woodColors/Mahogany.png", title: "Mahogany", aosDelay: "400", delayTitle: "500", },
   ],
   [
-    { src: "../images/woodColors/Padouk.png", title: "Padouk" },
-    { src: "../images/woodColors/Panga.png", title: "Panga" },
+    { src: "../images/woodColors/Padouk.png", title: "Padouk", aosDelay: "500", delayTitle: "600", },
+    { src: "../images/woodColors/Panga.png", title: "Panga", aosDelay: "600", delayTitle: "700", },
   ],
   [
-    { src: "../images/woodColors/Pine.png", title: "Pine" },
-    { text: "Our Products",isCenter: true },
-    { src: "../images/woodColors/RedOak.png", title: "Red Oak" },
+    { src: "../images/woodColors/Pine.png", title: "Pine", aosDelay: "700", delayTitle: "800", },
+    { text: "Our Products",isCenter: true, aosDelay: "800", delayTitle: "900", },
+    { src: "../images/woodColors/RedOak.png", title: "Red Oak", aosDelay: "900", delayTitle: "1000", },
   ],
   [
-    { src: "../images/woodColors/Tali.png", title: "Tali" },
-    { src: "../images/woodColors/Sapelli.png", title: "Sapelli" },
+    { src: "../images/woodColors/Tali.png", title: "Tali", aosDelay: "1000", delayTitle: "1100", },
+    { src: "../images/woodColors/Sapelli.png", title: "Sapelli", aosDelay: "1100", delayTitle: "1200", },
   ],
   [
-    { src: "../images/woodColors/Teak.png", title: "Teak" },
-    { src: "../images/woodColors/Walnut.png", title: "Walnut" },
-    { src: "../images/woodColors/Wenge.png", title: "Wenge" },
+    { src: "../images/woodColors/Teak.png", title: "Teak", aosDelay: "1200", delayTitle: "1300", },
+    { src: "../images/woodColors/Walnut.png", title: "Walnut", aosDelay: "1300", delayTitle: "1400", },
+    { src: "../images/woodColors/Wenge.png", title: "Wenge", aosDelay: "1400", delayTitle: "1500", },
   ],
   [
-    { src: "../images/woodColors/YellowPine.png", title: "Yellow Pine" },
-    { src: "../images/woodColors/Pine.png", title: "Pine" },
+    { src: "../images/woodColors/YellowPine.png", title: "Yellow Pine", aosDelay: "1500", delayTitle: "1600", },
+    { src: "../images/woodColors/Pine.png", title: "Pine", aosDelay: "1600", delayTitle: "1700", },
   ],
 ];
 
 export const productsgroups = [
-  { name: "Solid Parquets", link: "our-products/solid-parquets" },
-  { name: "Mosaic Parquets", link: "our-products/mosaic-parquets" },
-  { name: "Laser Inlays", link: "our-products/laser-inlays" },
-  { name: "Outdoor Decking", link: "our-products/outdoor-decking" },
-  { name: "Garden Furniture", link: "our-products/garden-furniture" }
+  { name: "Solid Parquets", link: "our-products/solid-parquets",aosDelay: "0", },
+  { name: "Mosaic Parquets", link: "our-products/mosaic-parquets",aosDelay: "200", },
+  { name: "Laser Inlays", link: "our-products/laser-inlays",aosDelay: "400", },
+  { name: "Outdoor Decking", link: "our-products/outdoor-decking",aosDelay: "600", },
+  { name: "Garden Furniture", link: "our-products/garden-furniture",aosDelay: "800", }
 ];
 
 export const partners = [

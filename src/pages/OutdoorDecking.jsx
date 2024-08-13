@@ -2,7 +2,7 @@ import React from 'react';
 
 const OutdoorDecking = () => {
   return (
-    <div className="text-center text-3xl mt-64 font-semibold min-h-[150px]">
+    <div className="text-center text-3xl mt-64 font-semibold min-h-[105px]">
       Outdoor Decking Page
     </div>
   );

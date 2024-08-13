@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
 const HeroHomeCarousel = ({ images }) => {
   const [slidesToShow, setSlidesToShow] = useState(3); // Default to 3 for large screens
@@ -40,8 +38,13 @@ const HeroHomeCarousel = ({ images }) => {
     <div className="w-full p-4">
       <Slider {...settings}>
         {images.map((img, idx) => (
-          <div key={idx} className="p-2">
+          <div
+            key={idx}
+            className="p-2"
+          >
             <img
+             data-aos="zoom-in"
+            data-aos-delay="800"
               src={img}
               alt={`Slide ${idx}`}
               className="object-cover rounded-md mx-auto"
