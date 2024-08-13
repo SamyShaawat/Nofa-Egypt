@@ -42,7 +42,7 @@ export const woodSpeciesImages = [
   ],
   [
     { src: "../images/woodColors/Pine.png", title: "Pine", aosDelay: "700", delayTitle: "800", },
-    { text: "Our Products",isCenter: true, aosDelay: "800", delayTitle: "900", },
+    { text: "Our Products", isCenter: true, aosDelay: "800", delayTitle: "900", },
     { src: "../images/woodColors/RedOak.png", title: "Red Oak", aosDelay: "900", delayTitle: "1000", },
   ],
   [
@@ -61,28 +61,28 @@ export const woodSpeciesImages = [
 ];
 
 export const productsgroups = [
-  { name: "Solid Parquets", link: "our-products/solid-parquets",aosDelay: "0", },
-  { name: "Mosaic Parquets", link: "our-products/mosaic-parquets",aosDelay: "200", },
-  { name: "Laser Inlays", link: "our-products/laser-inlays",aosDelay: "400", },
-  { name: "Outdoor Decking", link: "our-products/outdoor-decking",aosDelay: "600", },
-  { name: "Garden Furniture", link: "our-products/garden-furniture",aosDelay: "800", }
+  { name: "Solid Parquets", link: "our-products/solid-parquets", aosDelay: "0", },
+  { name: "Mosaic Parquets", link: "our-products/mosaic-parquets", aosDelay: "200", },
+  { name: "Laser Inlays", link: "our-products/laser-inlays", aosDelay: "400", },
+  { name: "Outdoor Decking", link: "our-products/outdoor-decking", aosDelay: "600", },
+  { name: "Garden Furniture", link: "our-products/garden-furniture", aosDelay: "800", }
 ];
 
 export const partners = [
   {
     id: 1,
     name: "Bona",
-    logo: "../images/Business Partners/Bona.png",linkWebsite:"https://www.bona.com/en/"
+    logo: "../images/Business Partners/Bona.png", linkWebsite: "https://www.bona.com/en/"
   },
-  { id: 2, name: "Ciranova", logo: "../images/Business Partners/Ciranova.png",linkWebsite:"https://ciranovastore.com/" },
-  { id: 3, name: "HyperGrinder", logo: "../images/Business Partners/HyperGrinder.png",linkWebsite:"https://www.hypergrinder.com/en/" },
-  { id: 4, name: "LobaOnTop", logo: "../images/Business Partners/LobaOnTop.png",linkWebsite:"https://www.loba.de/" },
-  { id: 5, name: "LumberAmerica", logo: "../images/Business Partners/LumberAmerica.png",linkWebsite:"http://lumber-america.com/" },
+  { id: 2, name: "Ciranova", logo: "../images/Business Partners/Ciranova.png", linkWebsite: "https://ciranovastore.com/" },
+  { id: 3, name: "HyperGrinder", logo: "../images/Business Partners/HyperGrinder.png", linkWebsite: "https://www.hypergrinder.com/en/" },
+  { id: 4, name: "LobaOnTop", logo: "../images/Business Partners/LobaOnTop.png", linkWebsite: "https://www.loba.de/" },
+  { id: 5, name: "LumberAmerica", logo: "../images/Business Partners/LumberAmerica.png", linkWebsite: "http://lumber-america.com/" },
   {
     id: 6,
     name: "MilesiWoodCoatings",
-    logo: "../images/Business Partners/MilesiWoodCoatings.png",linkWebsite:"https://www.milesi.com/en/"
+    logo: "../images/Business Partners/MilesiWoodCoatings.png", linkWebsite: "https://www.milesi.com/en/"
   },
-  { id: 7, name: "Wakol", logo: "../images/Business Partners/Wakol.png",linkWebsite:"https://www.wakol.com/en" },
-  
+  { id: 7, name: "Wakol", logo: "../images/Business Partners/Wakol.png", linkWebsite: "https://www.wakol.com/en" },
+
 ];
