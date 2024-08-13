@@ -17,7 +17,7 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
             {/* Logo Section */}
-            <div className="text-left">
+            <a href="/" className="text-left">
               <img
                 data-aos="zoom-in"
                 data-aos-delay="300"
@@ -25,7 +25,7 @@ const Footer = () => {
                 alt=""
                 className="w-auto h-64 mx-auto md:mx-0"
               />
-            </div>
+            </a>
             {/* Shop Links */}
             <div className="text-left">
               <div data-aos="zoom-in" data-aos-delay="400">
