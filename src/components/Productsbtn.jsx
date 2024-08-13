@@ -13,7 +13,7 @@ function Productsbtn() {
           className="flex items-center gap-4 border-2 border-slate-400 rounded-full p-4 font-semibold hover:text-slate-100 hover:bg-primary duration-300 w-full sm:w-1/2 md:w-1/3 lg:w-auto "
         >
           <img
-            src="../images/rightIcon.png"
+            src="../images/icons/rightIcon.png"
             alt=""
             className="w-6 sm:w-8 md:w-10 lg:w-12"
           />

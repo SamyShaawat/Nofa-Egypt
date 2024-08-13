@@ -60,7 +60,7 @@ const Navbar = () => {
               href="/"
               className="flex items-center gap-3 text-2xl text-black font-semibold"
             >
-              <img src="../images/logo.png" alt="" className="w-28 mr-2" />
+              <img src="../images/logo/logo.png" alt="" className="w-28 mr-2" />
             </a>
 
             {/* nav items for large devices */}
