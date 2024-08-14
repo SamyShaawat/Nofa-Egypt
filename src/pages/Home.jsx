@@ -1,10 +1,10 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import Hero from "../components/Hero";
-import Partners from "../components/Partners";
-import Productsbtn from "../components/Productsbtn";
-import OurProducts from "../components/OurProducts";
-import { woodSpeciesImages } from "../data/constants";
+import Hero from "../components/Home/Hero.jsx";
+import Partners from "../components/Home/Partners.jsx";
+import Productsbtn from "../components/Home/Productsbtn.jsx";
+import OurProducts from "../components/Home/OurProducts.jsx";
+import { woodSpeciesImages } from "../data/constants.js";
 const Home = () => {
   return (
     <>
