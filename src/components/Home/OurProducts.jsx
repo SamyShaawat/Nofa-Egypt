@@ -1,5 +1,5 @@
 import React from "react";
-import { woodSpeciesImages } from "../data/constants.js";
+import { woodSpeciesImages } from "../../data/constants";
 
 const OurProducts = () => {
   return (

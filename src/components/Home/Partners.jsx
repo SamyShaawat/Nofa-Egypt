@@ -1,7 +1,7 @@
 import React from "react";
 import Slider from "react-slick";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
-import { partners } from "../data/constants.js"; 
+import { partners } from "../../data/constants"; 
 
 const NextArrow = (props) => {
   const { onClick } = props;

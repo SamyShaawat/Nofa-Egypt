@@ -1,7 +1,7 @@
 import React from "react";
 import HeroHomeCarousel from "./HeroHomeCarousel.jsx";
 import Welcome from "./Welcome.jsx";
-import { carouselImages } from "../data/constants.js";
+import { carouselImages } from "../../data/constants";
 
 const Hero = () => {
   return (

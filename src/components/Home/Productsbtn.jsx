@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { productsgroups } from "../data/constants.js"; 
+import { productsgroups } from "../../data/constants"; 
 
 function Productsbtn() {
   return (
