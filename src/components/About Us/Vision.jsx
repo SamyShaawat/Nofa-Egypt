@@ -5,7 +5,11 @@ const Vision = () => {
     <div className="grid grid-cols-1 sm:grid-cols-2   gap-5 place-items-center p-5">
       {/* Image */}
       <div>
-        <img src="../images/aboutUs/aboutImage_4.png" alt="" />
+        <img
+          className="rounded-lg"
+          src="../images/aboutUs/aboutImage_4.jpg"
+          alt=""
+        />
       </div>
       {/* Text */}
       <div className="">

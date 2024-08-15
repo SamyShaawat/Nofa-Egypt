@@ -2,14 +2,14 @@ import { services } from "../../data/constants";
 
 const WhoWeAre = () => {
   return (
-    <div>
+    <div className="p-6">
       <h2 className="text-center text-3xl font-bold my-5 ">Who We Are</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2   gap-5 place-items-center ">
         {/* image left  */}
         <div className="p-3">
           <img
-            className="w-full h-full"
-            src="../images/aboutUs/aboutImage_2.png"
+            className="w-full h-full rounded-lg"
+            src="../images/aboutUs/aboutImage_2.JPG"
             alt="aboutImage_2"
           />
         </div>

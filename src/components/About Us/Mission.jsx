@@ -11,7 +11,11 @@ const Mission = () => {
       </div>
       {/* Image */}
       <div>
-        <img src="../images/aboutUs/aboutImage_3.png" alt="" />
+        <img
+          className="rounded-lg"
+          src="../images/aboutUs/aboutImage_3.jpeg"
+          alt=""
+        />
       </div>
     </div>
   );
