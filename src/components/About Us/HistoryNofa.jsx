@@ -3,8 +3,8 @@ import React from "react";
 
 const HistoryNofa = () => {
   return (
-    <div className="p-6 lg:px-8 lg:py-8">
-      <div className="lg:flex lg:items-center lg:justify-between lg:max-w-4xl lg:mx-auto">
+    <div className=" p-6 lg:px-8 lg:py-2 lg:mx-auto">
+      <div className="lg:flex lg:items-center lg:justify-between  lg:max-w-4xl lg:mx-auto ">
         {/* Icon and Text */}
         <div className="grid grid-cols-1 gap-5 place-items-center mb-6">
           <div>
@@ -22,10 +22,10 @@ const HistoryNofa = () => {
         </div>
       </div>
       {/* Image and Text */}
-      <div className="lg:flex lg:items-center lg:justify-between lg:max-w-4xl lg:mx-auto mt-10">
+      <div className="lg:flex lg:items-center lg:justify-between lg:max-w-4xl lg:mx-auto">
         {/* Text */}
-        <div className="w-full max-w-lg lg:pr-4">
-          <p className="text-lg text-gray-700 leading-relaxed">
+        <div className="w-full ">
+          <p className="text-lg text-gray-700 leading-relaxed ">
             NOFA is a family business established in 1950 with a stellar
             projects record. Over the decades, our flooring company has seen
             remarkable growth and expansion, as demonstrated in the chart. From

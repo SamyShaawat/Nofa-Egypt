@@ -1,3 +1,5 @@
+import YouTubeVideo from "./YouTubeVideo";
+
 const OfferNofa = () => {
   return (
     <div className="p-6">
@@ -20,21 +22,8 @@ const OfferNofa = () => {
       </div>
       {/* Two video  */}
       <div className="grid grid-cols-1 sm:grid-cols-2 place-items-center gap-5 ">
-        <video className="border border-primay rounded-lg shadow-lg" controls>
-          <source
-            src="../images/aboutUs/decking and pergola.mp4"
-            type="video/mp4"
-          />
-          Your browser does not support the video tag.
-        </video>
-
-        <video className="border border-primay rounded-lg shadow-lg" controls>
-          <source
-            src="../images/aboutUs/parquet final.mp4"
-            type="video/mp4"
-          />
-          Your browser does not support the video tag.
-        </video>
+        <YouTubeVideo videoId="tn4SFHWDCgo" title="Decking and Pergola" />
+        <YouTubeVideo videoId="afjFmEiZFmA" title="Parquet Final" />
       </div>
     </div>
   );
