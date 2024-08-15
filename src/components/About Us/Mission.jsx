@@ -1,23 +1,29 @@
+/* eslint-disable react/no-unescaped-entities */
 const Mission = () => {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2   gap-5 place-items-center p-5">
-      {/* Text */}
-      <div className="">
-        <p className="text-3xl font-bold mb-5">Our Mission</p>
-        <p>
-          Is your home missing that extra special thing? We have the spirit We
-          have the skill We have the wood And You have the place Let’s do it.
-        </p>
-      </div>
-      {/* Image */}
-      <div>
-        <img
-          className="rounded-lg"
-          src="../images/aboutUs/aboutImage_3.jpeg"
-          alt=""
-        />
+    <div className="p-6 lg:px-8 lg:py-8">
+      <div className="lg:flex lg:items-start lg:justify-between lg:max-w-4xl lg:mx-auto">
+        {/* Text on the left */}
+        <div className="w-full max-w-lg lg:pr-4 flex items-center">
+          <div>
+            <p className="text-3xl font-bold text-gray-900 mb-3">Our Mission</p>
+            <p className="text-lg text-gray-700 leading-relaxed mb-4">
+              Is your home missing that extra special thing? We have the spirit. We have the skill. We have the wood. And you have the place. 
+              <span className="font-semibold text-gray-900"> Let's do it.</span>
+            </p>
+          </div>
+        </div>
+        {/* Image on the right */}
+        <div className="w-full flex justify-center lg:justify-end lg:pl-4">
+          <img
+            className="w-full h-auto max-w-sm rounded-lg border-2 border-primary hover:shadow-xl object-cover"
+            src="../images/aboutUs/aboutImage_3.jpeg"
+            alt="Mission"
+          />
+        </div>
       </div>
     </div>
   );
 };
+
 export default Mission;

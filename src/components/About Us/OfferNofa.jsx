@@ -30,7 +30,7 @@ const OfferNofa = () => {
 
         <video className="border border-primay rounded-lg shadow-lg" controls>
           <source
-            src="../images/aboutUs/decking and pergola.mp4"
+            src="../images/aboutUs/parquet final.mp4"
             type="video/mp4"
           />
           Your browser does not support the video tag.
