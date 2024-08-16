@@ -6,7 +6,7 @@ import Mission from "../components/About Us/Mission";
 import Vision from "../components/About Us/Vision";
 import WhyNofa from "../components/About Us/WhyNofa";
 import HistoryNofa from "../components/About Us/HistoryNofa";
-import OfferNofa from "../components/About Us/OfferNofa";
+// import OfferNofa from "../components/About Us/DraftOfferNofa";
 import AboutCertificate from "../components/About Us/AboutCertificate";
 
 const About = () => {
