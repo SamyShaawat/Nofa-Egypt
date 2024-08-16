@@ -23,7 +23,7 @@ const About = () => {
         <Vision />
         <WhyNofa />
         <HistoryNofa />
-        <OfferNofa />
+        {/* <OfferNofa /> */}
         <AboutCertificate />
       </div>
     </>

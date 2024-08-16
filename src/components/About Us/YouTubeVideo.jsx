@@ -9,7 +9,7 @@ const YouTubeVideo = ({ videoId, title, thumbnailUrl }) => {
 
   return (
     <div className="flex flex-col items-center p-4 border-2 border-blue-300 rounded-lg ">
-      <div className="relative w-64 h-40 border-2 border-blue-300 rounded-lg overflow-hidden shadow-lg">
+      <div className="relative w-64 h-40 sm:w-80 sm:h-48 border-2 border-blue-300 rounded-lg overflow-hidden shadow-lg">
         {!isPlaying ? (
           // if not click to play video
           <>

@@ -21,7 +21,7 @@ const OfferNofa = () => {
         </p>
       </div>
       {/* Two video  */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 place-items-center gap-5 ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 place-items-center gap-2 ">
         <YouTubeVideo videoId="tn4SFHWDCgo" title="Decking and Pergola" />
         <YouTubeVideo videoId="afjFmEiZFmA" title="Parquet Final" />
       </div>
