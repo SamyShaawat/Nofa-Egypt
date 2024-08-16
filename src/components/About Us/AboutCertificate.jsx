@@ -1,89 +1,45 @@
-import { useState } from "react";
-import YouTubeVideo from "./YouTubeVideo";
-const AboutCertificate = () => {
-  const [showImage, SetShowImage] = useState(false);
+import React from "react";
 
-  const HandlerCertificate = () => {
-    SetShowImage(!showImage);
-  };
-  // to click any place in component disappear image certificate
-  const handleClose = () => {
-    SetShowImage(false);
-  };
+const AboutCertificate = ({ onCertificateClick }) => {
   return (
-    <>
-      {/* image and text */}
-      <div
-        className={`grid grip-cols-1 gap-5 place-items-center ${
-          showImage ? "blur-[2px]" : ""
-        }`}
-        onClick={showImage ? handleClose : null}
-      >
-        <div>
-          <img src="../images/aboutUs/hamerIcon.png" alt="" />
-        </div>
-        <p>
-          NOFA offers a wide range of patterns and flooring products tailored to
-          the latest trends across various markets, meeting the diverse needs of
-          customers.
-        </p>
-      </div>
-      {/* title text */}
-      <div>
-        <p
-          className={`text-center text-2xl font-bold mb-4 p-3 ${
-            showImage ? "blur-[2px]" : ""
-          }`}
-          onClick={showImage ? handleClose : null}
+    <div className="relative p-6 lg:px-8 lg:py-2 lg:mx-auto lg:max-w-4xl flex flex-col sm:flex-row gap-5 items-center mb-10">
+      {/* ISO Image with Hover Effect */}
+      <div className="relative group">
+        <img
+          data-aos="zoom-in"
+          data-aos-delay="200"
+          src="../images/certificates/ISO.png"
+          alt="ISO Certified"
+          className="w-32 h-32 rounded-full scale-100 hover:scale-110 hover:cursor-pointer duration-300 sm:mx-auto md:ml-1 mt-3 sm:text-left lg:mr-16 shadow-xl"
+          onClick={onCertificateClick}
+        />
+        <button
+          onClick={onCertificateClick}
+          className="absolute inset-0 flex items-center justify-center text-white text-sm font-semibold opacity-0 group-hover:opacity-100 duration-300 rounded-full bg-primary  border-2 border-secondary shadow-lg w-[135px] h-[135px] mt-3"
         >
-          Here is A Preview of our Work
-        </p>
+          View Certificate
+        </button>
       </div>
-      {/* Two video  */}
-      <div
-        className={`grid grid-cols-1 sm:grid-cols-2 place-items-center gap-2 ${
-          showImage ? "blur-[2px]" : ""
-        }`}
-        onClick={showImage ? handleClose : null}
-      >
-        <YouTubeVideo videoId="tn4SFHWDCgo" title="Decking and Pergola" />
-        <YouTubeVideo videoId="afjFmEiZFmA" title="Parquet Final" />
-      </div>
-      <div
-        className="grid grid-cols-1 sm:grid-cols-2 gap-5 place-items-center p-5  "
-        onClick={showImage ? handleClose : null}
-      >
-        <div className={`${showImage ? "blur-[2px]" : ""}`}>
-          <img
-            className="w-24 h-24 scale-100 hover:scale-150 hover:cursor-pointer duration-300 "
-            src="../images/certificates/ISO.png"
-            alt="ISO Certifiate"
-            onClick={HandlerCertificate}
-          />
-        </div>
 
-        <div
-          className={`${showImage ? "blur-[2px]  " : ""}`}
-          onClick={showImage ? handleClose : null}
-        >
-          <p>
-            NOFA Egypt is a certified designer, manufacturer, and supplier of
-            natural wood flooring That is recognized globally and is certified
-            from more than one entity, ensuring the quality of our products, the
-            safety of our work environment, and assures our customers of a great
-            choice and a perfect delivery whatever the criteria.
-          </p>
-        </div>
-        {/* Image that appears on click */}
-        {showImage && (
-          <img
-            src="../images/aboutUs/certificate_2.jpg"
-            alt="Certificate"
-            className="absolute transform  -translate-y-1/3 w-64 sm:w-80 h-auto z-50 rounded-lg border-4 border-primary"
-          />
-        )}
+      {/* Text Content */}
+      <div
+        data-aos="fade-left"
+        data-aos-delay="400"
+        className="w-full max-w-[900px] text-left"
+      >
+        <p className="text-lg text-gray-700 leading-relaxed">
+          NOFA Egypt is a certified designer, manufacturer, and supplier of
+          natural wood flooring that is recognized globally and is certified by
+          more than one entity, ensuring the quality of our products, the safety
+          of our work environment, and assures our customers of a great choice
+          and a perfect delivery whatever the criteria.{" "}
+          <span className="text-lg font-bold text-blue-800">
+            Click on the ISO image to view our Certificate.
+          </span>
+        </p>
       </div>
-    </>
+    </div>
   );
 };
+
 export default AboutCertificate;

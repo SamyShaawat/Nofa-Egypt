@@ -47,7 +47,7 @@ const HeroHomeCarousel = ({ images }) => {
             data-aos-delay="800"
               src={img}
               alt={`Slide ${idx}`}
-              className="object-cover rounded-md mx-auto"
+              className="object-cover rounded-md mx-auto border-2 border-primary shadow-xl"
               style={{
                 width:
                   slidesToShow === 1

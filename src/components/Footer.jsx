@@ -10,7 +10,7 @@ import { MdPhone } from "react-icons/md";
 import { navItems, contact } from "../data/constants.js";
 import { NavLink } from "react-router-dom";
 
-const Footer = () => {
+const Footer = ({ onCertificateClick }) => {
   return (
     <>
       <footer className="bg-[#e6e6e6] border-t-2 border-slate-300 py-8">
@@ -80,12 +80,19 @@ const Footer = () => {
                     </a>
                   </li>
                 </ul>
-                <div className="mt-2 sm:mt-0 sm:text-center">
+                <div className="mt-2 sm:mt-0 sm:text-center relative group">
                   <img
                     src="../images/certificates/ISO.png"
                     alt="ISO Certified"
-                    className="w-24 h-24 scale-100 hover:scale-110 hover:cursor-pointer duration-300 sm:mx-auto md:ml-1 mt-3 sm:text-left"
+                    className="w-24 h-24 rounded-full scale-100 hover:scale-110 hover:cursor-pointer duration-300 sm:mx-auto md:ml-1 mt-3 sm:text-left"
+                    onClick={onCertificateClick}
                   />
+                  <button
+                    onClick={onCertificateClick}
+                    className="absolute inset-0 flex items-center justify-center text-white text-sm font-semibold opacity-0 group-hover:opacity-100 duration-300 rounded-full bg-primary border-2 border-secondary shadow-lg w-[100px] h-[100px]"
+                  >
+                    View Certificate
+                  </button>
                 </div>
               </div>
             </div>
@@ -111,7 +118,7 @@ const Footer = () => {
                     <a href="tel:+0226390070">(02) 2639 0070</a>
                   </li>
                   <li className="flex cursor-pointer hover:translate-x-1 duration-300 hover:text-primary items-center text-slate-900 gap-1 mb-3">
-                  <MdPhone  className="text-xl sm:text-2xl mr-1" />
+                    <MdPhone className="text-xl sm:text-2xl mr-1" />
                     <a href="tel:+033623991">(03) 362 3991</a>
                   </li>
                   {/* Social Media handles */}

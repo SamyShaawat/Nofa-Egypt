@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/Navbar.jsx";
@@ -19,11 +19,50 @@ function App() {
     AOS.refresh();
   }, []);
 
+  const [showImage, setShowImage] = useState(false);
+
+  const handlerCertificate = () => {
+    setShowImage(!showImage);
+  };
+
+  const handleClose = () => {
+    setShowImage(false);
+  };
+  // Close the image when the Esc key is pressed
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        handleClose();
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
   return (
     <>
-      <Navbar />
-      <Outlet />
-      <Footer />
+      {/* Certificate Image Overlay */}
+      {showImage && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75"
+          onClick={handleClose}
+        >
+          <img
+            src="../images/aboutUs/certificate_2.jpg"
+            alt="Certificate"
+            className="w-full h-full object-contain"
+          />
+        </div>
+      )}
+      <div className={`mt-24 ${showImage ? "backdrop-blur-sm" : ""}`}>
+        <Navbar />
+        <Outlet />
+        <Footer onCertificateClick={handlerCertificate}/>
+      </div>
     </>
   );
 }

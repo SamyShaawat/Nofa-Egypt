@@ -10,7 +10,7 @@ function Productsbtn() {
           key={index}
           data-aos="zoom-in"
           data-aos-delay={product.aosDelay}
-          className="flex items-center gap-4 border-2 border-slate-400 rounded-full p-4 font-semibold hover:text-slate-100 hover:bg-primary duration-300 w-full sm:w-1/2 md:w-1/3 lg:w-auto "
+          className="flex items-center gap-4 border-2 border-primary rounded-full p-4 font-semibold hover:text-slate-100 hover:bg-primary duration-300 w-full sm:w-1/2 md:w-1/3 lg:w-auto "
         >
           <img
             src="../images/icons/rightIcon.png"

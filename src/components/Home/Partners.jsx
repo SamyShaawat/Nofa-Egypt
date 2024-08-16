@@ -53,7 +53,7 @@ const Partners = () => {
             {partners.map((partner) => (
               <div
                 key={partner.id}
-                className="p-4 flex justify-center items-center"
+                className="p-4 flex justify-center items-center "
               >
                 <a
                   data-aos="fade-up"
@@ -61,12 +61,12 @@ const Partners = () => {
                   href={partner.linkWebsite}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-white flex items-center justify-center rounded-full h-52 w-52 mx-auto cursor-pointer duration-300 hover:scale-110"
+                  className="bg-white flex items-center justify-center rounded-full h-52 w-52 mx-auto cursor-pointer duration-300 hover:scale-110 border-2 border-primary"
                 >
                   <img
                     src={partner.logo}
                     alt={partner.name}
-                    className="w-32 h-32 rounded-full object-contain" // Adjust size for large screens
+                    className="w-32 h-32 rounded-full object-contain " // Adjust size for large screens
                   />
                 </a>
               </div>

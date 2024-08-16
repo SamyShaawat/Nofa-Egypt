@@ -8,7 +8,9 @@ const WhoWeAre = () => {
         {/* Image on the left */}
         <div className="w-full flex justify-center lg:justify-start lg:pr-4">
           <img
-            className="w-full h-auto max-w-sm rounded-lg border-2 border-primary hover:shadow-xl"
+            data-aos="zoom-in"
+            data-aos-delay="100"
+            className="w-full h-auto max-w-sm rounded-lg border-2 border-primary shadow-xl"
             src="../images/aboutUs/aboutImage_2.JPG"
             alt="aboutImage_2"
           />
@@ -18,6 +20,8 @@ const WhoWeAre = () => {
           {services.map((service, index) => (
             <div
               key={index}
+              data-aos="fade-left"
+              data-aos-delay={services.aosDelay}
               className={`flex items-start mb-5  lg:mb-10 relative ${
                 index < services.length - 1 ? "pb-12" : ""
               }`}
@@ -26,7 +30,11 @@ const WhoWeAre = () => {
                 {service.number}
               </div>
               {index < services.length - 1 && (
-                <div className="absolute left-6 top-12 h-full border-l-4 border-gray-300 z-0"></div>
+                <div
+                  data-aos="fade-up"
+                  data-aos-delay={services.aosDelay}
+                  className="absolute left-6 top-12 h-full border-l-4 border-gray-300 z-0"
+                ></div>
               )}
               <div className="ml-6 lg:ml-6">
                 <h3 className="text-lg font-semibold text-gray-800">

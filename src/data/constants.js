@@ -150,19 +150,22 @@ export const services = [
     number: "01",
     title: "Flooring Manufacturers",
     description:
-      "We are a leading manufacturer specializing in Wood flooring. Our product line includes a diverse range of flooring types, such as Mahogany, () and () Flooring.​​​​​​​",
+      "We are a leading manufacturer specializing in Wood flooring. Our product line includes a diverse range of flooring types, such as Mahogany, () and () Flooring.​​​​​",
+      aosDelay: "100",
   },
   {
     number: "02",
     title: "Wide Range of Flooring Types",
     description:
       "With a diverse array of flooring products made and done with the most up-to-date technologies that the industry has to offer.",
+      aosDelay: "200",
   },
   {
     number: "03",
     title: "Reliable One-Stop Flooring Supplier",
     description:
       "We specialize in providing customized ODM solutions for brands, distributors, wholesalers, and contractors within the flooring industry, focusing on supply chain services.",
+      aosDelay: "300",
   },
 ];
 export const productsgroups = [

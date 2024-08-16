@@ -1,45 +1,30 @@
 import React, { useState } from "react";
+import { FaPlay } from "react-icons/fa";
 
-const YouTubeVideo = ({ videoId, title, thumbnailUrl }) => {
+const YouTubeVideo = ({ videoId, title }) => {
   const [isPlaying, setIsPlaying] = useState(false);
 
   const handlePlay = () => {
-    setIsPlaying(!isPlaying);
+    setIsPlaying(true);
   };
 
+  // Use YouTube's default thumbnail URL
+  const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+
   return (
-    <div className="flex flex-col items-center p-4 border-2 border-blue-300 rounded-lg ">
-      <div className="relative w-64 h-40 sm:w-80 sm:h-48 border-2 border-blue-300 rounded-lg overflow-hidden shadow-lg">
+    <div className="flex flex-col items-center p-2 border border-primary rounded-xl">
+      <div className="relative w-full max-w-md h-40 border border-primary rounded-lg overflow-hidden shadow-lg sm:max-w-lg sm:h-56">
         {!isPlaying ? (
-          // if not click to play video
-          <>
-            {/* thumbnailUrl  if video error */}
-            {/* <img
-              src={thumbnailUrl}
-              alt={title}
-              className="w-full h-full object-cover"
-            /> */}
-            <div
-              className="absolute inset-0 flex items-center justify-center bg-opacity-75 bg-white cursor-pointer "
-              onClick={handlePlay}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke=" #17588e"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className=" hover:scale-110 transition duration-300 ease-in-out"
-              >
-                {/* <circle cx="12" cy="12" r="3" /> */}
-                <polygon points="10 8 16 12 10 16 10 8" />
-              </svg>
+          <div
+            className="relative w-full h-full bg-cover bg-center cursor-pointer"
+            style={{ backgroundImage: `url(${thumbnailUrl})` }}
+            onClick={handlePlay}
+          >
+            <div className="absolute inset-0 flex items-center justify-center bg-opacity-75 bg-white/20 cursor-pointer">
+              <FaPlay className="hover:scale-110 text-[#7ecafd] size-16  transition duration-300 ease-in-out" />
             </div>
-          </>
+          </div>
         ) : (
-          // if Play video after click play
           <iframe
             className="w-full h-full"
             src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
@@ -50,7 +35,7 @@ const YouTubeVideo = ({ videoId, title, thumbnailUrl }) => {
           ></iframe>
         )}
       </div>
-      <p className="mt-2 text-center text-balck font-bold ">{title}</p>
+      <p className="mt-2 text-xl text-center text-black font-bold">{title}</p>
     </div>
   );
 };
