@@ -1,5 +1,8 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import ContactHero from "../components/Contact Us/ContactHero.jsx";
+import ContactDetails from "../components/Contact Us/ContactDetails.jsx";
+import GoogleMap from "../components/Contact Us/GoogleMap.jsx";
 
 const Contact = () => {
   return (
@@ -7,9 +10,9 @@ const Contact = () => {
       <Helmet>
         <title>Nofa Egypt | Contact Us</title>
       </Helmet>
-      <div className="text-center text-3xl mt-64 font-semibold min-h-[105px]">
-        Contact Us Page
-      </div>
+      <ContactHero />
+      <ContactDetails />
+      <GoogleMap />
     </>
   );
 };

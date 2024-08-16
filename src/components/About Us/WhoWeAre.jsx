@@ -11,7 +11,7 @@ const WhoWeAre = () => {
             data-aos="zoom-in"
             data-aos-delay="100"
             className="w-full h-auto max-w-sm rounded-lg border-2 border-primary shadow-xl"
-            src="../images/aboutUs/aboutImage_2.JPG"
+            src="../images/aboutUs/aboutImage_2.png"
             alt="aboutImage_2"
           />
         </div>

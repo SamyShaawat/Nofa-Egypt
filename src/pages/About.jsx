@@ -49,7 +49,7 @@ const About = () => {
           onClick={handleClose}
         >
           <img
-            src="../images/aboutUs/certificate_2.jpg"
+            src="../images/aboutUs/certificate.png"
             alt="Certificate"
             className="w-full h-full object-contain"
           />

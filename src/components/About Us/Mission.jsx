@@ -24,7 +24,7 @@ const Mission = () => {
             data-aos="zoom-in"
             data-aos-delay="100"
             className="w-full h-auto max-w-sm rounded-lg border-2 border-primary shadow-xl object-cover"
-            src="../images/aboutUs/aboutImage_3.jpeg"
+            src="../images/aboutUs/aboutImage_3.png"
             alt="Mission"
           />
         </div>
