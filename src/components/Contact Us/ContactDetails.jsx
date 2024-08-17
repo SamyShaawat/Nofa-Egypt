@@ -96,13 +96,13 @@ const ContactDetails = () => {
         <div
           data-aos="fade-left"
           data-aos-delay="200"
-          className="lg:w-1/2 w-full p-4 lg:p-6 flex items-center"
+          className="lg:w-1/2 w-full p-4 lg:p-6 flex items-center "
         >
-          <div className="w-full h-full flex justify-center border-4 rounded-2xl shadow-2xl border-primary bg-white">
+          <div className="w-full h-full flex justify-center border-4 rounded-2xl shadow-2xl border-primary  bg-white">
             <img
               src="../images/contactUs/africaMap.png"
               alt="Map of Africa"
-              className="w-full h-full object-cover rounded-lg transition-transform duration-300 hover:scale-105"
+              className="w-full h-full object-cover rounded-lg transition-transform duration-300 hover:scale-105 mx-14"
             />
           </div>
         </div>
