@@ -80,19 +80,22 @@ const Footer = ({ onCertificateClick }) => {
                     </a>
                   </li>
                 </ul>
-                <div className="mt-2 sm:mt-0 sm:text-center relative group">
-                  <img
-                    src="../images/certificates/ISO.png"
-                    alt="ISO Certified"
-                    className="w-24 h-24 rounded-full scale-100 hover:scale-110 hover:cursor-pointer duration-300 sm:mx-auto md:ml-1 mt-3 sm:text-left"
-                    onClick={onCertificateClick}
-                  />
-                  <button
-                    onClick={onCertificateClick}
-                    className="absolute inset-0 flex items-center justify-center text-white text-sm font-semibold opacity-0 group-hover:opacity-100 duration-300 rounded-full bg-primary border-2 border-secondary shadow-lg w-[100px] h-[100px]"
-                  >
-                    View Certificate
-                  </button>
+                {/* Certificate Clicked  */}
+                <div className="mt-2 sm:mt-0 sm:text-center relative inline-block">
+                  <div className="relative group">
+                    <img
+                      src="../images/certificates/ISO.png"
+                      alt="ISO Certified"
+                      className="w-24 h-24 rounded-full scale-100 hover:scale-110 hover:cursor-pointer duration-300 sm:mx-auto md:ml-1 mt-3 sm:text-left"
+                      onClick={onCertificateClick}
+                    />
+                    <button
+                      onClick={onCertificateClick}
+                      className="absolute inset-0 flex items-center justify-center text-white text-sm font-semibold opacity-0 group-hover:opacity-100 duration-300 rounded-full bg-primary border-2 border-secondary shadow-lg w-[100px] h-[100px] pointer-events-none group-hover:pointer-events-auto"
+                    >
+                      View Certificate
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
