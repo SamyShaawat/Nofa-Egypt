@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import "./App.css";
-import DraftNavbar from "./components/DraftNavbar.jsx";
+import Navbar from "./components/Navbar.jsx";
 import Footer from "./components/Footer";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -59,7 +59,7 @@ function App() {
         </div>
       )}
       <div className={`mt-24 ${showImage ? "backdrop-blur-sm" : ""}`}>
-        <DraftNavbar />
+        <Navbar />
         <Outlet />
         <Footer onCertificateClick={handlerCertificate} />
       </div>

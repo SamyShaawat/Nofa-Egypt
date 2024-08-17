@@ -71,10 +71,13 @@ const Navbar = () => {
                   className="relative text-base text-black hover:text-primary duration-300 flex items-center group"
                   ref={(el) => (dropdownRefs.current[index] = el)}
                   onMouseEnter={() => dropdown && toggleDropdown(index)}
-                  onMouseLeave={() => dropdown && setIsDropdownOpen((prevState) => ({
-                    ...prevState,
-                    [index]: false,
-                  }))}
+                  onMouseLeave={() =>
+                    dropdown &&
+                    setIsDropdownOpen((prevState) => ({
+                      ...prevState,
+                      [index]: false,
+                    }))
+                  }
                 >
                   <NavLink
                     to={path}
@@ -85,7 +88,11 @@ const Navbar = () => {
                   {dropdown && (
                     <>
                       <div className="ml-2">
-                        {isDropdownOpen[index] ? <ChevronUp /> : <ChevronDown />}
+                        {isDropdownOpen[index] ? (
+                          <ChevronUp />
+                        ) : (
+                          <ChevronDown />
+                        )}
                       </div>
                       <ul
                         className={`absolute left-0 top-full mt-2 bg-white shadow-lg rounded-md whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
@@ -159,7 +166,8 @@ const Navbar = () => {
                   className="relative text-base text-white py-1 hover:text-black/70 duration-300"
                   onMouseEnter={() => dropdown && toggleDropdown(index)}
                   onMouseLeave={() =>
-                    dropdown && setIsDropdownOpen((prevState) => ({
+                    dropdown &&
+                    setIsDropdownOpen((prevState) => ({
                       ...prevState,
                       [index]: false,
                     }))
@@ -177,7 +185,11 @@ const Navbar = () => {
                     </NavLink>
                     {dropdown && (
                       <div className="ml-2">
-                        {isDropdownOpen[index] ? <ChevronUp /> : <ChevronDown />}
+                        {isDropdownOpen[index] ? (
+                          <ChevronUp />
+                        ) : (
+                          <ChevronDown />
+                        )}
                       </div>
                     )}
                   </div>
