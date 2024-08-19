@@ -21,8 +21,8 @@ const Footer = ({ onCertificateClick }) => {
               <img
                 data-aos="zoom-in"
                 data-aos-delay="300"
-                src="../images/logo/logo-without-bg.png"
-                alt=""
+                src="https://firebasestorage.googleapis.com/v0/b/nofa-egypt.appspot.com/o/logos%2Flogo-without-bg.png?alt=media&token=d48b39d2-946d-4210-9d82-9b1365c05781"
+                alt="Logo"
                 className="w-auto h-64 mx-auto lg:ml-[-60px] md:mx-0"
               />
             </a>
@@ -84,7 +84,7 @@ const Footer = ({ onCertificateClick }) => {
                 <div className="mt-2 sm:mt-0 sm:text-center relative inline-block">
                   <div className="relative group">
                     <img
-                      src="../images/certificates/ISO.png"
+                      src="https://firebasestorage.googleapis.com/v0/b/nofa-egypt.appspot.com/o/certificates%2FISO.png?alt=media&token=e5529caf-83ff-4893-9bbc-bfbe1e397e33"
                       alt="ISO Certified"
                       className="w-24 h-24 rounded-full scale-100 hover:scale-110 hover:cursor-pointer duration-300 sm:mx-auto md:ml-1 mt-3 sm:text-left"
                       onClick={onCertificateClick}

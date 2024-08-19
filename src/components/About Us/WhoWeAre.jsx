@@ -11,7 +11,7 @@ const WhoWeAre = () => {
             data-aos="zoom-in"
             data-aos-delay="100"
             className="w-full h-auto max-w-sm rounded-lg border-2 border-primary shadow-xl"
-            src="../images/aboutUs/aboutImage_2.png"
+            src="https://firebasestorage.googleapis.com/v0/b/nofa-egypt.appspot.com/o/aboutUs%2FaboutImage_2.png?alt=media&token=6f9e58e9-545d-46fe-84e8-e7e658be49a9"
             alt="aboutImage_2"
           />
         </div>

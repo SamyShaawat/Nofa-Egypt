@@ -100,7 +100,7 @@ const ContactDetails = () => {
         >
           <div className="w-full h-full flex justify-center border-4 rounded-2xl shadow-2xl border-primary  bg-white">
             <img
-              src="../images/contactUs/africaMap.png"
+              src="https://firebasestorage.googleapis.com/v0/b/nofa-egypt.appspot.com/o/contactUs%2FafricaMap.png?alt=media&token=90926f49-60f9-49e2-9f42-13fc55563c24"
               alt="Map of Africa"
               className="w-full h-full object-cover rounded-lg transition-transform duration-300 hover:scale-105 mx-14"
             />

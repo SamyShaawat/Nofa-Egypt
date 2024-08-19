@@ -21,7 +21,7 @@ const Vision = () => {
             data-aos="zoom-in"
             data-aos-delay="100"
             className="w-full h-auto max-w-sm rounded-lg border-2 border-primary shadow-xl object-cover"
-            src="../images/aboutUs/aboutImage_4.png"
+            src="https://firebasestorage.googleapis.com/v0/b/nofa-egypt.appspot.com/o/aboutUs%2FaboutImage_4.png?alt=media&token=dd6d6520-187e-4119-92e6-78739d718fe5"
             alt="Vision"
           />
         </div>

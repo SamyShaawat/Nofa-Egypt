@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
@@ -6,15 +6,22 @@ const MobileMenu = ({
   navItems,
   isMenuOpen,
   handleNavLinkClick,
-  isDropdownOpen,
-  handleDropdownMouseEnter,
-  handleDropdownMouseLeave,
+  // isDropdownOpen,
+  // handleDropdownMouseEnter,
+  // handleDropdownMouseLeave,
   contact,
   handleAuthClick,
   userLoggedIn,
 }) => {
   const location = useLocation();
   const currentPath = location.pathname;
+  const [isDropdownOpen, setIsDropdownOpen] = useState({});
+  const handleDropdownToggle = (index) => {
+    setIsDropdownOpen((prevState) => ({
+      ...prevState,
+      [index]: !prevState[index],
+    }));
+  };
 
   return (
     <div
@@ -27,8 +34,6 @@ const MobileMenu = ({
           <li
             key={path}
             className="relative text-base text-white py-1 hover:text-black/70 duration-300"
-            onMouseEnter={() => dropdown && handleDropdownMouseEnter(index)}
-            onMouseLeave={() => dropdown && handleDropdownMouseLeave(index)}
           >
             <div className="flex items-center">
               <NavLink
@@ -39,7 +44,10 @@ const MobileMenu = ({
                 {title}
               </NavLink>
               {dropdown && (
-                <div className="ml-2">
+                <div
+                  className="ml-2"
+                  onClick={() => handleDropdownToggle(index)}
+                >
                   {isDropdownOpen[index] ? <ChevronUp /> : <ChevronDown />}
                 </div>
               )}
@@ -69,6 +77,52 @@ const MobileMenu = ({
               </ul>
             )}
           </li>
+
+          // <li
+          //   key={path}
+          //   className="relative text-base text-white py-1 hover:text-black/70 duration-300"
+          //   onMouseEnter={() => dropdown && handleDropdownMouseEnter(index)}
+          //   onMouseLeave={() => dropdown && handleDropdownMouseLeave(index)}
+          // >
+          //   <div className="flex items-center">
+          //     <NavLink
+          //       to={path}
+          //       className={({ isActive }) => (isActive ? "active-black" : "")}
+          //       onClick={() => handleNavLinkClick(path)}
+          //     >
+          //       {title}
+          //     </NavLink>
+          //     {dropdown && (
+          //       <div className="ml-2">
+          //         {isDropdownOpen[index] ? <ChevronUp /> : <ChevronDown />}
+          //       </div>
+          //     )}
+          //   </div>
+          //   {dropdown && (
+          //     <ul
+          //       className={`pl-4 mt-2 ${
+          //         isDropdownOpen[index] ? "block" : "hidden"
+          //       }`}
+          //     >
+          //       {subItems.map((subItem) => (
+          //         <li
+          //           key={subItem.path}
+          //           className="py-1 text-white hover:text-black/70"
+          //         >
+          //           <NavLink
+          //             to={subItem.path}
+          //             className={({ isActive }) =>
+          //               isActive ? "active-black block" : "block"
+          //             }
+          //             onClick={() => handleNavLinkClick(subItem.path, index)}
+          //           >
+          //             {subItem.title}
+          //           </NavLink>
+          //         </li>
+          //       ))}
+          //     </ul>
+          //   )}
+          // </li>
         ))}
       </ul>
       <ul className="lg:flex justify-center items-center">

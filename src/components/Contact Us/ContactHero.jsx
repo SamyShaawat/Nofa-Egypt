@@ -4,7 +4,10 @@ const ContactHero = () => {
   return (
     <div
       className="relative w-full h-[350px] bg-cover bg-center"
-      style={{ backgroundImage: "url(../images/contactUs/contactImage_1.png)" }}
+      style={{
+        backgroundImage:
+          "url(https://firebasestorage.googleapis.com/v0/b/nofa-egypt.appspot.com/o/contactUs%2FcontactImage_1.png?alt=media&token=e80eddea-dc9d-4455-a187-95f02718a01a)",
+      }}
     >
       <div
         className="absolute inset-0 flex items-start pt-16 pl-10"

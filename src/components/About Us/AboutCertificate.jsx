@@ -8,7 +8,7 @@ const AboutCertificate = ({ onCertificateClick }) => {
         <img
           data-aos="zoom-in"
           data-aos-delay="200"
-          src="../images/certificates/ISO.png"
+          src="https://firebasestorage.googleapis.com/v0/b/nofa-egypt.appspot.com/o/certificates%2FISO.png?alt=media&token=e5529caf-83ff-4893-9bbc-bfbe1e397e33"
           alt="ISO Certified"
           className="w-32 h-32 rounded-full scale-100 hover:scale-110 hover:cursor-pointer duration-300 sm:mx-auto md:ml-1 mt-3 sm:text-left lg:mr-16 shadow-xl"
           onClick={onCertificateClick}

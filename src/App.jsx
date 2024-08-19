@@ -55,7 +55,7 @@ function App() {
           onClick={handleClose}
         >
           <img
-            src="../images/aboutUs/certificate.png"
+            src="https://firebasestorage.googleapis.com/v0/b/nofa-egypt.appspot.com/o/aboutUs%2Fcertificate.png?alt=media&token=41d281f0-22be-4413-95b9-a4236c8504d7"
             alt="Certificate"
             className="w-full h-full object-contain"
           />

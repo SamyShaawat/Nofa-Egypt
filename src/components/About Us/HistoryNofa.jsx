@@ -14,7 +14,7 @@ const HistoryNofa = () => {
           {" "}
           {/* Adjusted margin to move the icon up */}
           <img
-            src="../images/aboutUs/graphIcon.png"
+            src="https://firebasestorage.googleapis.com/v0/b/nofa-egypt.appspot.com/o/aboutUs%2FgraphIcon.png?alt=media&token=03810e2a-2787-4c6d-8c88-23de3136c8ac"
             alt="Graph Icon"
             className="w-20 h-20"
           />
@@ -46,8 +46,9 @@ const HistoryNofa = () => {
         {/* Image */}
         <div className="w-full flex justify-center lg:justify-end lg:pl-4 mt-6 lg:mt-0">
           <img
-          data-aos="fade-left" data-aos-delay="400"
-            src="../images/aboutUs/Graph.gif"
+            data-aos="fade-left"
+            data-aos-delay="400"
+            src="https://firebasestorage.googleapis.com/v0/b/nofa-egypt.appspot.com/o/aboutUs%2FGraph.gif?alt=media&token=420cf311-5e75-4103-80d5-57060e132a37"
             alt="Growth Graph"
             className="w-full max-w-sm rounded-lg border-2 border-primary shadow-xl"
           />

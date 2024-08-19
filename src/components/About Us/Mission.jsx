@@ -24,7 +24,7 @@ const Mission = () => {
             data-aos="zoom-in"
             data-aos-delay="100"
             className="w-full h-auto max-w-sm rounded-lg border-2 border-primary shadow-xl object-cover"
-            src="../images/aboutUs/aboutImage_3.png"
+            src="https://firebasestorage.googleapis.com/v0/b/nofa-egypt.appspot.com/o/aboutUs%2FaboutImage_3.png?alt=media&token=bd802509-2e62-4851-bed0-4272a7374a0a"
             alt="Mission"
           />
         </div>

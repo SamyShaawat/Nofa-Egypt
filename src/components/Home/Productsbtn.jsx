@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { productsgroups } from "../../data/constants"; 
+import { productsgroups } from "../../data/constants";
 
 function Productsbtn() {
   return (
@@ -13,7 +13,7 @@ function Productsbtn() {
           className="flex items-center gap-4 border-2 border-primary rounded-full p-4 font-semibold hover:text-slate-100 hover:bg-primary duration-300 w-full sm:w-1/2 md:w-1/3 lg:w-auto "
         >
           <img
-            src="../images/icons/rightIcon.png"
+            src="https://firebasestorage.googleapis.com/v0/b/nofa-egypt.appspot.com/o/icons%2FrightIcon.png?alt=media&token=4f06eeb7-427e-44c8-a97e-e3894e33f5a4"
             alt=""
             className="w-6 sm:w-8 md:w-10 lg:w-12"
           />

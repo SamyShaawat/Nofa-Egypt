@@ -10,7 +10,10 @@ const OfferNofa = () => {
         className="grid grid-cols-1 gap-5 place-items-center"
       >
         <div>
-          <img src="../images/aboutUs/hamerIcon.png" alt="Hamer Icon" />
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/nofa-egypt.appspot.com/o/aboutUs%2FhamerIcon.png?alt=media&token=3c4a7508-e53e-444a-b951-336967fe8277"
+            alt="Hamer Icon"
+          />
         </div>
         <p className="text-center text-lg text-gray-700 leading-relaxed max-w-[950px]">
           NOFA offers a wide range of patterns and flooring products tailored to
