@@ -133,7 +133,7 @@ const Navbar = () => {
                 </li>
               ))}
             </ul>
-            <ul className="hidden lg:flex justify-center space-x-12 items-center">
+            <ul className="hidden lg:flex justify-center space-x-5 items-center">
               {contact.map(({ path, title }) => (
                 <li
                   key={path}
