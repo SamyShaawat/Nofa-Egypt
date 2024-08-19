@@ -3,7 +3,7 @@ name: Deploy to Firebase
 on:
   push:
     branches:
-      - main  # Change this to the branch you want to deploy from
+      - main  # Adjust to your default branch name
 
 jobs:
   deploy:
@@ -16,7 +16,7 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '18'  # Use the version of Node.js that your project requires
+        node-version: '18'  # Match this to your Node.js version
 
     - name: Install dependencies
       run: npm ci
