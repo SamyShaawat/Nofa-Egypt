@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { AuthProvider } from "./contexts/authContext"; // Import AuthProvider
 
 function App() {
   useEffect(() => {
@@ -28,6 +29,7 @@ function App() {
   const handleClose = () => {
     setShowImage(false);
   };
+
   // Close the image when the Esc key is pressed
   useEffect(() => {
     const handleKeyDown = (event) => {
@@ -43,8 +45,9 @@ function App() {
       document.removeEventListener("keydown", handleKeyDown);
     };
   }, []);
+
   return (
-    <>
+    <AuthProvider>
       {/* Certificate Image Overlay */}
       {showImage && (
         <div
@@ -63,7 +66,7 @@ function App() {
         <Outlet />
         <Footer onCertificateClick={handlerCertificate} />
       </div>
-    </>
+    </AuthProvider>
   );
 }
 

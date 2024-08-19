@@ -1,11 +1,13 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { FaBarsStaggered, FaXmark } from "react-icons/fa6";
-import { navItems } from "./../data/constants";
-import { contact } from "./../data/constants";
 import { ArrowRight, ChevronDown, ChevronUp } from "lucide-react";
+import { useAuth } from "../contexts/authContext";
+import { doSignOut } from "../firebase/auth";
+import { navItems, contact } from "../data/constants";
 
 const Navbar = () => {
+  const { userLoggedIn } = useAuth(); // Access userLoggedIn
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState({});
   const dropdownRefs = useRef([]);
@@ -48,6 +50,16 @@ const Navbar = () => {
       }));
     }
     navigate(path);
+  };
+
+  const handleAuthClick = () => {
+    if (userLoggedIn) {
+      doSignOut().then(() => {
+        navigate("/login");
+      });
+    } else {
+      navigate("/login");
+    }
   };
 
   return (
@@ -139,6 +151,15 @@ const Navbar = () => {
                   </NavLink>
                 </li>
               ))}
+              {/* Login/Logout Button */}
+              <li className="hover:bg-primary border-primary hover:text-slate-100 text-black border-2  rounded-md flex gap-2  duration-300">
+                <button
+                  onClick={handleAuthClick}
+                  className="flex gap-2 py-2 px-3"
+                >
+                  {userLoggedIn ? "Logout" : "Login"}
+                </button>
+              </li>
             </ul>
 
             {/* mobile menu */}
@@ -222,7 +243,7 @@ const Navbar = () => {
                 </li>
               ))}
             </ul>
-            <ul className="lg:flex justify-center space-x-12 items-center">
+            <ul className="lg:flex justify-center items-center">
               {contact.map(({ path, title }) => (
                 <li
                   key={path}
@@ -239,6 +260,17 @@ const Navbar = () => {
                   </NavLink>
                 </li>
               ))}
+              {/* Login/Logout Button */}
+              <li className="hover:bg-primary border-primary text-white hover:text-black duration-300 flex gap-2 hover:translate-x-1">
+                <button
+                  onClick={handleAuthClick}
+                  className={({ isActive }) =>
+                    isActive ? "active-black flex gap-2" : "flex gap-2"
+                  }
+                >
+                  {userLoggedIn ? "Logout" : "Login"}
+                </button>
+              </li>
             </ul>
           </div>
         </div>

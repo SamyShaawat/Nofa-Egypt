@@ -4,12 +4,7 @@
 @import "slick-carousel/slick/slick.css";
 @import "slick-carousel/slick/slick-theme.css";
 
-@font-face {
-  font-family: "Copperplate Gothic";
-  src: url("/fonts/copperplate gothic font.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
+
 body {
   font-family: "DM Sans", sans-serif;
 }

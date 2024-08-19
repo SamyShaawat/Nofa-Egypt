@@ -10,6 +10,7 @@ import LaserInlays from "../pages/LaserInlays";
 import OutdoorDecking from "../pages/OutdoorDecking";
 import GardenFurniture from "../pages/GardenFurniture";
 import EventsNews from "../pages/EventsNews";
+import Login from "../pages/Login";
 
 const Router = createBrowserRouter([
   {
@@ -26,6 +27,7 @@ const Router = createBrowserRouter([
       { path: "/our-products/garden-furniture", element: <GardenFurniture /> },
       { path: "/events-news", element: <EventsNews /> },
       { path: "/contact-us", element: <Contact /> },
+      { path: "/login", element: <Login /> },
     ],
   },
 ]);
