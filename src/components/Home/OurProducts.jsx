@@ -10,7 +10,7 @@ const OurProducts = () => {
         data-aos-delay="200"
         className="text-2xl font-bold mb-4 text-center md:hidden"
       >
-        Our Products
+        Our Distinctive Wood Species
       </h2>
 
       {/* Mobile and Tablet Layout - 4 images per row */}
@@ -58,7 +58,7 @@ const OurProducts = () => {
                   <p
                     data-aos="fade-up"
                     data-aos-delay={item.aosDelay}
-                    className="text-xl sm:text-lg md:text-2xl text-black text-center font-bold"
+                    className="text-lg sm:text-lg md:text-2xl text-black text-center font-bold"
                   >
                     {item.text}
                   </p>

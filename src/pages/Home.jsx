@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 import Hero from "../components/Home/Hero.jsx";
 import Partners from "../components/Home/Partners.jsx";
 import Productsbtn from "../components/Home/Productsbtn.jsx";
+import Finishesbtn from "../components/Home/Finishesbtn.jsx";
 import OurProducts from "../components/Home/OurProducts.jsx";
 import { woodSpeciesImages } from "../data/constants.js";
 const Home = () => {
@@ -15,9 +16,10 @@ const Home = () => {
         Home Page
       </div> */}
       <Hero />
-      <Partners />
-      <OurProducts images={woodSpeciesImages} />
       <Productsbtn />
+      <OurProducts images={woodSpeciesImages} />
+      <Finishesbtn />
+      <Partners />
     </>
   );
 };

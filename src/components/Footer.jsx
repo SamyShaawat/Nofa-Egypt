@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  FaFacebook,
-  FaInstagram,
-  FaLocationDot,
-  FaWhatsapp,
-} from "react-icons/fa6";
+import { FaFacebook, FaLocationDot, FaWhatsapp } from "react-icons/fa6";
 import { IoMail } from "react-icons/io5";
 import { MdPhone } from "react-icons/md";
 import { navItems, contact } from "../data/constants.js";

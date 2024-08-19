@@ -27,7 +27,11 @@ const Login = () => {
 
   return (
     <div className="h-[400px] flex items-center justify-center bg-gray-100">
-      <div className="bg-white p-8 rounded-lg shadow-md max-w-md w-full">
+      <div
+        data-aos="zoom-in"
+        data-aos-delay="200"
+        className="bg-white p-8 rounded-lg border-2 border-slate-300 shadow-md max-w-md w-full"
+      >
         <h2 className="text-2xl font-semibold text-center mb-6">Login</h2>
         {error && <p className="text-red-500 text-center mb-4">{error}</p>}
         <form onSubmit={handleLogin} className="space-y-4">

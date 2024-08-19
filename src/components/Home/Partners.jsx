@@ -1,7 +1,7 @@
 import React from "react";
 import Slider from "react-slick";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
-import { partners } from "../../data/constants"; 
+import { partners } from "../../data/constants";
 
 const NextArrow = (props) => {
   const { onClick } = props;
@@ -47,13 +47,18 @@ const Partners = () => {
   return (
     <div data-aos="fade-up" data-aos-delay="200" className="bg-gray-200">
       <section className="container mx-auto px-4 py-8 relative">
+        {/* Title */}
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-8">
+          Our Business Partners
+        </h2>
+
         {/* Large screens (laptops) */}
         <div className="hidden lg:block">
-          <Slider {...settings} slidesToShow={4} slidesToScroll={1}>
+          <Slider {...settings} slidesToShow={5} slidesToScroll={1}>
             {partners.map((partner) => (
               <div
                 key={partner.id}
-                className="p-4 flex justify-center items-center "
+                className="p-4 flex justify-center items-center"
               >
                 <a
                   data-aos="fade-up"
@@ -66,7 +71,7 @@ const Partners = () => {
                   <img
                     src={partner.logo}
                     alt={partner.name}
-                    className="w-32 h-32 rounded-full object-contain " // Adjust size for large screens
+                    className="w-32 h-32 rounded-full object-contain"
                   />
                 </a>
               </div>
@@ -86,12 +91,12 @@ const Partners = () => {
                   href={partner.linkWebsite}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-white flex items-center justify-center rounded-full h-40 w-40 mx-auto cursor-pointer duration-300 hover:scale-110"
+                  className="bg-white flex items-center justify-center rounded-full h-40 w-40 mx-auto cursor-pointer duration-300 hover:scale-110 border-2 border-primary"
                 >
                   <img
                     src={partner.logo}
                     alt={partner.name}
-                    className="w-24 h-24 rounded-full object-contain" // Adjust size for medium screens
+                    className="w-24 h-24 rounded-full object-contain"
                   />
                 </a>
               </div>
@@ -111,12 +116,12 @@ const Partners = () => {
                   href={partner.linkWebsite}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-white flex items-center justify-center rounded-full h-28 w-28 mx-auto cursor-pointer duration-300 hover:scale-110"
+                  className="bg-white flex items-center justify-center rounded-full h-40 w-40 mx-auto cursor-pointer duration-300 hover:scale-110 border-2 border-primary"
                 >
                   <img
                     src={partner.logo}
                     alt={partner.name}
-                    className="w-20 h-20 rounded-full object-contain" // Adjust size for small screens
+                    className="w-20 h-20 rounded-full object-contain"
                   />
                 </a>
               </div>

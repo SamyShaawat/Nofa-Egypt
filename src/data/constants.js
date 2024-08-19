@@ -83,7 +83,7 @@ export const woodSpeciesImages = [
       delayTitle: "800",
     },
     {
-      text: "Our Products",
+      text: "Our Distinctive Wood Species",
       isCenter: true,
       aosDelay: "800",
       delayTitle: "900",
@@ -190,6 +190,27 @@ export const productsgroups = [
     link: "our-products/garden-furniture",
     aosDelay: "800",
   },
+];
+
+
+export const finishes = [
+  {
+    name: "Water Based Polyurethane",
+    link: "our-products/solid-parquets",
+    aosDelay: "0",
+  },
+  {
+    name: "Solvent Based Polyurethane",
+    link: "our-products/mosaic-parquets",
+    aosDelay: "200",
+  },
+  { name: "Water Based Stains", link: "our-products/laser-inlays", aosDelay: "400" },
+  {
+    name: "Oil Finish",
+    link: "our-products/outdoor-decking",
+    aosDelay: "600",
+  },
+
 ];
 
 export const partners = [
