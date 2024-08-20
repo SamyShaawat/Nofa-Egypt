@@ -1,6 +1,6 @@
-// AllComponents.js
-
 import React, { useState } from "react";
+import ProductsGroup from "./ProductsGroup";
+import Finishers from "./Finishers";
 
 const Filter = () => {
   const [activeTab, setActiveTab] = useState("all"); // Initialize with 'all'
@@ -39,65 +39,24 @@ const Filter = () => {
       </div>
 
       {/* Render components based on activeTab */}
-      {activeTab === "all" && <div>All components go here!</div>}
-      {activeTab === "products" && <div>Products components go here!</div>}
-      {activeTab === "finishers" && <div>Finishers components go here!</div>}
+      {activeTab === "all" && (
+        <div>
+          <ProductsGroup />
+          <Finishers />
+        </div>
+      )}
+      {activeTab === "products" && (
+        <div>
+          <ProductsGroup />
+        </div>
+      )}
+      {activeTab === "finishers" && (
+        <div>
+          <Finishers />
+        </div>
+      )}
     </div>
   );
 };
 
 export default Filter;
-
-// import { useState } from "react";
-
-// const Filter = () => {
-//   // initial Value Is All
-//   const [activeTab, setActiveTab] = useState("all");
-//   // Have Three Tabs all , productsGroup , Finishers
-//   const handleTabClick = (tab) => {
-//     setActiveTab(tab);
-//   };
-
-//   return (
-//     <div className="py-4 grid  place-items-center ">
-//       <div className="flex  gap-10    justify-center">
-//         {/* All products   productsGroup + Finishers */}
-
-//         <button
-//           onClick={() => handleTabClick("all")}
-//           className={`px-4 py-2 w-full h-full rounded ${
-//             activeTab === "all" ? "bg-primary text-white" : "bg-gray-200"
-//           }`}
-//         >
-//           All
-//         </button>
-//         {/* Filter to  productsGroup */}
-//         <button
-//           onClick={() => handleTabClick("products")}
-//           className={`px-8 py-2 w-full h-full rounded ${
-//             activeTab === "products" ? "bg-primary text-white" : "bg-gray-200"
-//           }`}
-//         >
-//           Products Group
-//         </button>
-//         {/* Filter to Finishers */}
-//         <button
-//           onClick={() => handleTabClick("finishers")}
-//           className={`px-8 py-2 w-full h-full rounded ${
-//             activeTab === "finishers" ? "bg-primary text-white" : "bg-gray-200"
-//           }`}
-//         >
-//           Finishers
-//         </button>
-//       </div>
-
-//       {/* Render components based on activeTab */}
-
-//       {activeTab === "all" && <div>All components go here!</div>}
-//       {activeTab === "products" && <div>Products components go here!</div>}
-//       {activeTab === "finishers" && <div>Finishers components go here!</div>}
-//     </div>
-//   );
-// };
-
-// export default Filter;

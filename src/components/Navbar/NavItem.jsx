@@ -1,15 +1,15 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { ChevronDown, ChevronUp } from "lucide-react";
+// import { ChevronDown, ChevronUp } from "lucide-react";
 
 const NavItem = ({
   path,
   title,
   dropdown,
-  subItems,
+  // subItems ,
   index,
-  isDropdownOpen,
-  handleNavLinkClick,
+  // isDropdownOpen,
+  // handleNavLinkClick ,
   handleDropdownMouseEnter,
   handleDropdownMouseLeave,
 }) => (
@@ -21,12 +21,12 @@ const NavItem = ({
     <NavLink to={path} className={({ isActive }) => (isActive ? "active" : "")}>
       {title}
     </NavLink>
-    {dropdown && (
-      <>
-        <div className="ml-2">
-          {isDropdownOpen[index] ? <ChevronUp /> : <ChevronDown />}
-        </div>
-        <ul
+    {/* {dropdown && ( */}
+    {/* // <> */}
+    {/* <div className="ml-2"> */}
+    {/* {isDropdownOpen[index] ? <ChevronUp /> : <ChevronDown />} */}
+    {/* </div> */}
+    {/* <ul
           className={`absolute left-0 top-full mt-2 bg-white shadow-lg rounded-md whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
             isDropdownOpen[index] ? "block" : "hidden"
           }`}
@@ -45,9 +45,9 @@ const NavItem = ({
               </NavLink>
             </li>
           ))}
-        </ul>
-      </>
-    )}
+        </ul> */}
+    {/* </> */}
+    {/* // )} */}
   </li>
 );
 

@@ -171,23 +171,46 @@ export const services = [
 export const productsgroups = [
   {
     name: "Solid Parquets",
-    link: "our-products/solid-parquets",
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/nofa-egypt.appspot.com/o/productGroups%2FSOLID%20(1).jpg?alt=media&token=8c5f3750-1076-4489-aabd-5a5510ac1af4",
+    description:
+      "Luxurious 18-22 mm solid parquets strips with a variety of dimensions and wood species to bring warm satisfaction.",
+    link: "our-products",
     aosDelay: "0",
   },
   {
     name: "Mosaic Parquets",
-    link: "our-products/mosaic-parquets",
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/nofa-egypt.appspot.com/o/productGroups%2FMOSAIC.jpg?alt=media&token=9862fcf0-d2b5-4d5f-8700-567bb3d902ce",
+    description: "Authentic taste of mosaic parquets panels.",
+    link: "our-products",
     aosDelay: "200",
   },
-  { name: "Laser Inlays", link: "our-products/laser-inlays", aosDelay: "400" },
+  {
+    name: "Laser Inlays",
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/nofa-egypt.appspot.com/o/productGroups%2FLASER%20(1).jpg?alt=media&token=73b2d8aa-1794-42bf-b7d8-a522ee062a83",
+    description:
+      "Add a touch of elegance and classic taste to your home with laser inlayed borders and medallions.",
+    link: "our-products",
+    aosDelay: "400",
+  },
   {
     name: "Outdoor Decking",
-    link: "our-products/outdoor-decking",
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/nofa-egypt.appspot.com/o/productGroups%2FDECKING%20(1).jpg?alt=media&token=94289343-5632-46f0-a00a-84c203c4b560",
+    description:
+      " Solid exotic wood profiles bring your decking to a new edge of luxury.",
+    link: "our-products",
     aosDelay: "600",
   },
   {
     name: "Garden Furniture",
-    link: "our-products/garden-furniture",
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/nofa-egypt.appspot.com/o/productGroups%2FGARDEN%20FURNITURE.jpg?alt=media&token=1715eb53-920e-4c40-9184-1635b27b4abf",
+    description:
+      "Enjoy a relaxing mood with solid wood yet cozy garden furniture, tables and pergolas of exotic woods and finishes.",
+    link: "our-products",
     aosDelay: "800",
   },
 ];
@@ -195,22 +218,36 @@ export const productsgroups = [
 export const finishes = [
   {
     name: "Water Based Polyurethane",
-    link: "our-products/solid-parquets",
+    link: "our-products",
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/nofa-egypt.appspot.com/o/Finishers%2FFINISHES%20-%20WATER%20%26%20SOLVENT.jpg?alt=media&token=fe26d77f-ad3d-4ba7-822c-f23b1f234b88",
+    description:
+      "Waterborne very low VOC polyurethane fast drying process with gloss, satin, or matte finish",
     aosDelay: "0",
   },
   {
     name: "Solvent Based Polyurethane",
-    link: "our-products/mosaic-parquets",
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/nofa-egypt.appspot.com/o/Finishers%2FFINISHES%20-%20OIL%20%26%20SATIN.jpg?alt=media&token=bab96e6b-b3b5-4069-a973-0468b841fdf5",
+    link: "our-products",
+    description:
+      "Solvent base polyurethane with high durability for less maintenance",
     aosDelay: "200",
   },
   {
     name: "Water Based Stains",
-    link: "our-products/laser-inlays",
+    link: "our-products",
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/nofa-egypt.appspot.com/o/Finishers%2FFINISHES%20-%20WATER%20%26%20SOLVENT.jpg?alt=media&token=fe26d77f-ad3d-4ba7-822c-f23b1f234b88",
+    description: "A wide range of stains that would meet your home style.",
     aosDelay: "400",
   },
   {
     name: "Oil Finish",
-    link: "our-products/outdoor-decking",
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/nofa-egypt.appspot.com/o/Finishers%2FFINISHES%20-%20OIL%20%26%20SATIN.jpg?alt=media&token=bab96e6b-b3b5-4069-a973-0468b841fdf5",
+    link: "our-products",
+    description: "Warm natural look of oil finish with a touch of elegance.",
     aosDelay: "600",
   },
 ];
