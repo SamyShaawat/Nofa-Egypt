@@ -13,7 +13,7 @@ export const navItems = [
       { path: "/our-products/garden-furniture", title: "Garden Furniture" },
     ],
   },
-  { path: "/events-news", title: "Events & News" },
+  { path: "/events-newsletter", title: "Events & Newsletter" },
 ];
 export const contact = [{ path: "/contact-us", title: "Contact Us" }];
 

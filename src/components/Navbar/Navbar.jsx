@@ -78,13 +78,18 @@ const Navbar = () => {
     }
   };
 
+  // Dynamically add "Control Panel" to the navItems when logged in
+  const dynamicNavItems = userLoggedIn
+    ? [...navItems, { path: "/control-panel", title: "Control Panel" }]
+    : navItems;
+
   return (
     <header className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
       <div className="max-w-screen-2xl container mx-auto xl:px-24 px-4">
         <nav className="flex justify-between items-center py-3">
           <Logo />
           <DesktopNav
-            navItems={navItems}
+            navItems={dynamicNavItems}
             contact={contact}
             isDropdownOpen={isDropdownOpen}
             handleNavLinkClick={handleNavLinkClick}
@@ -104,7 +109,7 @@ const Navbar = () => {
           </div>
         </nav>
         <MobileMenu
-          navItems={navItems}
+          navItems={dynamicNavItems}
           isMenuOpen={isMenuOpen}
           handleNavLinkClick={handleNavLinkClick}
           isDropdownOpen={isDropdownOpen}

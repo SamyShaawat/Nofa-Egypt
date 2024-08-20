@@ -9,8 +9,10 @@ import MosaicParquets from "../pages/MosaicParquets";
 import LaserInlays from "../pages/LaserInlays";
 import OutdoorDecking from "../pages/OutdoorDecking";
 import GardenFurniture from "../pages/GardenFurniture";
-import EventsNews from "../pages/EventsNews";
+import EventsNewsletter from "../pages/EventsNewsletter";
 import Login from "../pages/Login";
+import ControlPanel from "../pages/ControlPanel";
+import ProtectedRoute from "../components/Control Panel/ProtectedRoute.jsx"; // Create this component to protect routes
 
 const Router = createBrowserRouter([
   {
@@ -25,9 +27,17 @@ const Router = createBrowserRouter([
       { path: "/our-products/laser-inlays", element: <LaserInlays /> },
       { path: "/our-products/outdoor-decking", element: <OutdoorDecking /> },
       { path: "/our-products/garden-furniture", element: <GardenFurniture /> },
-      { path: "/events-news", element: <EventsNews /> },
+      { path: "/events-newsletter", element: <EventsNewsletter /> },
       { path: "/contact-us", element: <Contact /> },
       { path: "/login", element: <Login /> },
+      {
+        path: "/control-panel",
+        element: (
+          <ProtectedRoute>
+            <ControlPanel />
+          </ProtectedRoute>
+        ),
+      },
     ],
   },
 ]);
