@@ -192,7 +192,6 @@ export const productsgroups = [
   },
 ];
 
-
 export const finishes = [
   {
     name: "Water Based Polyurethane",
@@ -204,13 +203,16 @@ export const finishes = [
     link: "our-products/mosaic-parquets",
     aosDelay: "200",
   },
-  { name: "Water Based Stains", link: "our-products/laser-inlays", aosDelay: "400" },
+  {
+    name: "Water Based Stains",
+    link: "our-products/laser-inlays",
+    aosDelay: "400",
+  },
   {
     name: "Oil Finish",
     link: "our-products/outdoor-decking",
     aosDelay: "600",
   },
-
 ];
 
 export const partners = [
