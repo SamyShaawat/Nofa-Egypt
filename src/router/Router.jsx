@@ -4,15 +4,11 @@ import Home from "../pages/Home";
 import About from "../pages/About";
 import Contact from "../pages/Contact";
 import Products from "../pages/Products";
-// import SolidParquets from "../pages/SolidParquets";
-// import MosaicParquets from "../pages/MosaicParquets";
-// import LaserInlays from "../pages/LaserInlays";
-// import OutdoorDecking from "../pages/OutdoorDecking";
-// import GardenFurniture from "../pages/GardenFurniture";
 import EventsNewsletter from "../pages/EventsNewsletter";
 import Login from "../pages/Login";
 import ControlPanel from "../pages/ControlPanel";
-import ProtectedRoute from "../components/Control Panel/ProtectedRoute.jsx"; // Create this component to protect routes
+import VerifyEmail from "../pages/VerifyEmail"; // Import VerifyEmail
+import ProtectedRoute from "../components/Control Panel/ProtectedRoute.jsx"; // Importing the ProtectedRoute
 
 const Router = createBrowserRouter([
   {
@@ -22,11 +18,6 @@ const Router = createBrowserRouter([
       { path: "/", element: <Home /> },
       { path: "/about-us", element: <About /> },
       { path: "/our-products", element: <Products /> },
-      // { path: "/our-products/solid-parquets", element: <SolidParquets /> },
-      // { path: "/our-products/mosaic-parquets", element: <MosaicParquets /> },
-      // { path: "/our-products/laser-inlays", element: <LaserInlays /> },
-      // { path: "/our-products/outdoor-decking", element: <OutdoorDecking /> },
-      // { path: "/our-products/garden-furniture", element: <GardenFurniture /> },
       { path: "/events-newsletter", element: <EventsNewsletter /> },
       { path: "/contact-us", element: <Contact /> },
       { path: "/login", element: <Login /> },
@@ -38,6 +29,7 @@ const Router = createBrowserRouter([
           </ProtectedRoute>
         ),
       },
+      { path: "/verify-email", element: <VerifyEmail /> }, // Add the VerifyEmail route here
     ],
   },
 ]);

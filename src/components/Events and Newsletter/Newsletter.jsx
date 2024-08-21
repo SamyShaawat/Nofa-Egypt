@@ -1,11 +1,35 @@
 import React, { useState } from "react";
+import { getAuth, sendSignInLinkToEmail } from "firebase/auth";
 
 const Newsletter = () => {
   const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Email submitted:", email);
+    const auth = getAuth();
+
+    // Define the action code settings
+    const actionCodeSettings = {
+      url: "https://www.nofaegypt.com/verify-email", // Ensure this URL is authorized in Firebase Console
+      handleCodeInApp: true,
+    };
+
+    try {
+      // Send a sign-in link to the user's email
+      await sendSignInLinkToEmail(auth, email, actionCodeSettings);
+      
+      // Save the email locally to complete the sign-in process later
+      window.localStorage.setItem("emailForSignIn", email);
+
+      // Provide user feedback
+      setMessage("Verification email sent! Please check your inbox.");
+      setEmail(""); // Clear the input
+    } catch (error) {
+      // Log detailed error information
+      console.error("Error sending verification email: ", error.message);
+      setMessage("Error sending verification email.");
+    }
   };
 
   return (
@@ -33,6 +57,9 @@ const Newsletter = () => {
             Submit
           </button>
         </form>
+        {message && (
+          <p className="text-center mt-4 text-green-600">{message}</p>
+        )}
       </div>
     </div>
   );
