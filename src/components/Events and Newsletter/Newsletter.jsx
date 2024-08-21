@@ -4,6 +4,8 @@ import { getAuth, sendSignInLinkToEmail } from "firebase/auth";
 const Newsletter = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -16,9 +18,13 @@ const Newsletter = () => {
     };
 
     try {
+      setLoading(true);
+      setError("");
+      setMessage("");
+
       // Send a sign-in link to the user's email
       await sendSignInLinkToEmail(auth, email, actionCodeSettings);
-      
+
       // Save the email locally to complete the sign-in process later
       window.localStorage.setItem("emailForSignIn", email);
 
@@ -26,15 +32,22 @@ const Newsletter = () => {
       setMessage("Verification email sent! Please check your inbox.");
       setEmail(""); // Clear the input
     } catch (error) {
-      // Log detailed error information
-      console.error("Error sending verification email: ", error.message);
-      setMessage("Error sending verification email.");
+      if (error.code === 'auth/invalid-action-code') {
+        setError("The verification link is invalid or has expired. Please request a new verification email.");
+      } else if (error.code === 'auth/quota-exceeded') {
+        setError("Quota exceeded: Unable to send verification email at this time. Please try again later.");
+      } else {
+        console.error("Error sending verification email: ", error.message);
+        setError("Error sending verification email. Please try again later.");
+      }
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
     <div className="flex justify-center items-center mt-10">
-      <div className="w-full max-w-md bg-white p-6">
+      <div className="w-full max-w-md bg-white p-6 rounded-md shadow-md">
         <h2 className="text-2xl font-bold mb-4 text-center">
           Subscribe to Our Newsletter
         </h2>
@@ -52,13 +65,17 @@ const Newsletter = () => {
           />
           <button
             type="submit"
-            className="w-full md:w-1/4 lg:w-1/5 py-2 bg-primary text-white rounded-md hover:bg-primary/80"
+            className="w-full md:w-1/4 lg:w-1/5 py-2 bg-primary text-white rounded-md hover:bg-primary/80 disabled:opacity-50"
+            disabled={loading}
           >
-            Submit
+            {loading ? "Sending..." : "Submit"}
           </button>
         </form>
         {message && (
           <p className="text-center mt-4 text-green-600">{message}</p>
+        )}
+        {error && (
+          <p className="text-center mt-4 text-red-600">{error}</p>
         )}
       </div>
     </div>
