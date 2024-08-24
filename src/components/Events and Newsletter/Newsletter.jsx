@@ -13,10 +13,12 @@ const Newsletter = () => {
     setError("");
     setMessage("");
 
-    const verificationLink = `${window.location.origin}/verify-email?email=${encodeURIComponent(email)}&token=${btoa(email)}`;
+    const verificationLink = `${
+      window.location.origin
+    }/verify-email?email=${encodeURIComponent(email)}&token=${btoa(email)}`;
 
     const templateParams = {
-      to_email: email,
+      email_address: email,
       verification_link: verificationLink,
     };
 
