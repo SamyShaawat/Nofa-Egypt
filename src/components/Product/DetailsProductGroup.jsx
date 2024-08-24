@@ -32,7 +32,7 @@ const DetailsProductGroup = ({ product, onBack }) => {
             {/* Div  content under the name card  */}
             <div className="flex gap-5 flex-col lg:flex-row  md:flex-col">
               {/* Image Left */}
-              <div className="flex flex-row justify-center md:flex-row lg:flex-col flex-wrap gap-2 mb-0 md:mb-10">
+              <div className="flex flex-row justify-center md:flex-row lg:flex-col flex-wrap gap-2 mb-0 md:mb-2">
                 {product.gallery.map((img, idx) => (
                   <img
                     key={idx}

@@ -13,7 +13,7 @@ const Filter = () => {
   return (
     <div className="p-4 my-4 ">
       <div className="flex flex-col justify-center space-y-2 gap-5  md:flex-row md:space-x-4 md:space-y-0 ">
-        <div className="border-2 border-primary/80 rounded-lg">
+        <div className="lg:border-2 lg:border-primary/80 md:border-2 md:border-primary/80 rounded-lg">
           <button
             onClick={() => handleTabClick("all")}
             className={`w-full md:w-auto px-16 py-2 rounded font-bold text-xl ${
