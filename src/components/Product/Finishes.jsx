@@ -26,7 +26,7 @@ const Finishes = () => {
       )}
       <div
         className={`flex flex-wrap justify-center gap-4 my-6 transition-opacity duration-300 ${
-          selectedFinish ? "opacity-0 pointer-events-none" : "opacity-100"
+          selectedFinish ? "pointer-events-none" : "opacity-100"
         }`}
       >
         {finishes.map((finish, index) => (

@@ -13,30 +13,36 @@ const Filter = () => {
   return (
     <div className="p-4 my-4 ">
       <div className="flex flex-col justify-center space-y-2 gap-5  md:flex-row md:space-x-4 md:space-y-0 ">
-        <button
-          onClick={() => handleTabClick("all")}
-          className={`w-full md:w-auto px-16 py-2 rounded font-bold text-xl ${
-            activeTab === "all" ? "bg-primary text-white" : "text-primary"
-          }`}
-        >
-          All
-        </button>
-        <button
-          onClick={() => handleTabClick("products")}
-          className={`w-full md:w-auto px-16 py-2 rounded font-bold text-xl ${
-            activeTab === "products" ? "bg-primary text-white" : "text-primary"
-          }`}
-        >
-          Products Group
-        </button>
-        <button
-          onClick={() => handleTabClick("finishers")}
-          className={`w-full md:w-auto px-16 py-2 rounded font-bold text-xl ${
-            activeTab === "finishers" ? "bg-primary text-white" : "text-primary"
-          }`}
-        >
-          Finishes
-        </button>
+        <div className="border-2 border-primary/80 rounded-lg">
+          <button
+            onClick={() => handleTabClick("all")}
+            className={`w-full md:w-auto px-16 py-2 rounded font-bold text-xl ${
+              activeTab === "all" ? "bg-primary text-white" : "text-primary"
+            }`}
+          >
+            All
+          </button>
+          <button
+            onClick={() => handleTabClick("products")}
+            className={`w-full md:w-auto px-16 py-2 rounded font-bold text-xl ${
+              activeTab === "products"
+                ? "bg-primary text-white"
+                : "text-primary"
+            }`}
+          >
+            Products Group
+          </button>
+          <button
+            onClick={() => handleTabClick("finishers")}
+            className={`w-full md:w-auto px-16 py-2 rounded font-bold text-xl ${
+              activeTab === "finishers"
+                ? "bg-primary text-white"
+                : "text-primary"
+            }`}
+          >
+            Finishes
+          </button>
+        </div>
       </div>
 
       {/* Render components based on activeTab */}

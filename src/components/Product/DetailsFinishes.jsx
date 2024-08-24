@@ -11,26 +11,27 @@ const DetailsFinishes = ({ finish, onBack }) => {
   const [selectedImage, setSelectedImage] = useState(finish.gallery[0]);
 
   return (
-    <div className="p-6 rounded-lg relative z-20 ">
-      <div className="grid place-item-center grid-cols-1 md:grid-cols-2 gap-5  max-w-full">
-        <div className="flex bg-white flex-col md:flex-row justify-center  md:gap-5 gap-2 border rounded-lg shadow-md p-4 ">
-          <div className="flex flex-row md:flex-col space-y-2 space-x-2 flex-wrap justify-center">
+    <div className=" p-6 rounded-lg  mx-auto relative z-40 mt-10 ">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 place-items-center ">
+        {/* Div of Card */}
+        <div className="flex lg:translate-x-1/2 md:translate-x-1/2 bg-white flex-col md:flex-row md:gap-5 gap-2 border-2 border-primary rounded-lg shadow-md p-4 ">
+          <div className="flex flex-row md:flex-col space-x-3  flex-wrap justify-center">
             {/* Name and Icon Close  */}
             <div className="flex justify-between">
-              <p className="text-center font-bold text-2xl mb-1 ml-0  mr-8 md:ml-48 ">
+              <p className="text-center font-bold text-2xl mb-2 translate-x-2 translate-y--2 lg:translate-x-1/2 ">
                 {finish.name}
               </p>
               <FontAwesomeIcon
                 icon={faSquareXmark}
                 style={{ fontSize: "25px" }}
-                className="text-red-600 text-bold text-lg cursor-pointer mt-2 "
+                className="text-red-600 text-bold text-lg cursor-pointer  translate-x-2 md:translate-x-2 "
                 onClick={onBack}
               />
             </div>
             {/* Div  content under the name card  */}
-            <div className="flex gap-5 flex-col  md:flex-row">
+            <div className="flex gap-5 flex-col lg:flex-row  md:flex-col">
               {/* Images Left  */}
-              <div className="flex flex-row justify-center md:flex-col flex-wrap gap-2 mb-0 md:mb-10">
+              <div className="flex flex-row justify-center md:flex-row lg:flex-col flex-wrap gap-2 mb-0 md:mb-10">
                 {finish.gallery.map((img, idx) => (
                   <img
                     key={idx}

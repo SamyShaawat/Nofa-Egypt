@@ -28,7 +28,7 @@ const ProductGroup = () => {
       )}
       <div
         className={`flex flex-wrap justify-center gap-4 my-6 transition-opacity duration-300 ${
-          selectedProduct ? "opacity-0 pointer-events-none" : "opacity-100"
+          selectedProduct ? " pointer-events-none" : "opacity-100"
         }`}
       >
         {productsgroups.map((product, index) => (
