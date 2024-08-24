@@ -1,0 +1,76 @@
+import { useState } from "react";
+import { ArrowRight } from "lucide-react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSquareXmark } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
+const DetailsFinishes = ({ finish, onBack }) => {
+  const navigate = useNavigate();
+  const handleContactUsClick = () => {
+    navigate("/contact-us");
+  };
+  const [selectedImage, setSelectedImage] = useState(finish.gallery[0]);
+
+  return (
+    <div className="p-6 rounded-lg relative z-20 ">
+      <div className="grid place-item-center grid-cols-1 md:grid-cols-2 gap-5  max-w-full">
+        <div className="flex bg-white flex-col md:flex-row justify-center  md:gap-5 gap-2 border rounded-lg shadow-md p-4 ">
+          <div className="flex flex-row md:flex-col space-y-2 space-x-2 flex-wrap justify-center">
+            {/* Name and Icon Close  */}
+            <div className="flex justify-between">
+              <p className="text-center font-bold text-2xl mb-1 ml-0  mr-8 md:ml-48 ">
+                {finish.name}
+              </p>
+              <FontAwesomeIcon
+                icon={faSquareXmark}
+                style={{ fontSize: "25px" }}
+                className="text-red-600 text-bold text-lg cursor-pointer mt-2 "
+                onClick={onBack}
+              />
+            </div>
+            {/* Div  content under the name card  */}
+            <div className="flex gap-5 flex-col  md:flex-row">
+              {/* Images Left  */}
+              <div className="flex flex-row justify-center md:flex-col flex-wrap gap-2 mb-0 md:mb-10">
+                {finish.gallery.map((img, idx) => (
+                  <img
+                    key={idx}
+                    src={img}
+                    alt={`${finish.name} ${idx + 1}`}
+                    className={`h-8 w-16 object-cover cursor-pointer ${
+                      selectedImage === img ? "border-2 border-blue-500" : ""
+                    }`}
+                    onClick={() => setSelectedImage(img)}
+                  />
+                ))}
+              </div>
+              {/* Single Image And Button Contact Us */}
+              <div>
+                <img
+                  src={selectedImage}
+                  alt={finish.name}
+                  className="h-64 w-80 object-cover rounded-md shadow-gray-400 shadow-lg"
+                />
+                <div className="mt-2 ">
+                  <button
+                    className="bg-primary text-white font-semibold px-4 py-2 rounded-full flex items-center gap-2 w-full sm:w-auto hover:bg-primary/80 duration-300 text-sm sm:text-base lg:text-lg whitespace-nowrap"
+                    onClick={handleContactUsClick}
+                  >
+                    <span className="text-center">Contact Us</span>
+                    <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6" />
+                  </button>
+                </div>
+              </div>
+              {/* Descripion  */}
+              <div className="flex flex-col gap-1">
+                <h3 className="text-xl font-semibold">Description</h3>
+                <p className="text-gray-600 ">{finish.description}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default DetailsFinishes;

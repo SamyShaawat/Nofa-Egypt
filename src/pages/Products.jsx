@@ -1,4 +1,3 @@
-import React from "react";
 import { Helmet } from "react-helmet";
 import ProductHero from "../components/Product/ProductHero";
 import Filter from "../components/Product/Filter";

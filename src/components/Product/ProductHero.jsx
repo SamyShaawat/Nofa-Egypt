@@ -27,7 +27,7 @@ const ProductHero = () => {
         <div className="absolute inset-0 flex items-start pt-16 pl-10 background-solid lg:bg-transparent">
           <div className="max-w-xl lg:ml-20">
             <h1 className="text-5xl font-bold border-l-4 border-black pl-3 text-[#191919]">
-              PRODUCTS & FINISHERS
+              PRODUCTS & FINISHES
             </h1>
             <p className="mt-4 text-xl text-slate-800">
               Choose from our diverse array of flooring

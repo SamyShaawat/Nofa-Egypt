@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import { ChevronDown, ChevronUp } from "lucide-react";
+// import { ChevronDown, ChevronUp } from "lucide-react";
 
 const MobileMenu = ({
   navItems,
