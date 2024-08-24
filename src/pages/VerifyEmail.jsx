@@ -1,55 +1,75 @@
 import React, { useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
-import { getAuth, applyActionCode } from "firebase/auth";
-import { FiCheckCircle } from "react-icons/fi"; // Import the check icon from react-icons
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  query,
+  where,
+  getDocs,
+} from "firebase/firestore";
+import { useNavigate } from "react-router-dom";
 
 const VerifyEmail = () => {
-  const location = useLocation();
+  const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(true);
+  const db = getFirestore();
   const navigate = useNavigate();
-  const queryParams = new URLSearchParams(location.search);
-  const oobCode = queryParams.get("oobCode");
-
-  const [isLoading, setIsLoading] = useState(true); // Loading state
-  const [isVerified, setIsVerified] = useState(false); // Verification state
 
   useEffect(() => {
-    const auth = getAuth();
-    if (oobCode) {
-      applyActionCode(auth, oobCode)
-        .then(() => {
-          setIsLoading(false); // Stop loading
-          setIsVerified(true); // Set verified to true
-          // Redirect to the control panel or another page after successful verification
-          setTimeout(() => {
-            navigate("/control-panel");
-          }, 2000); // Redirect after 2 seconds
-        })
-        .catch((error) => {
-          setIsLoading(false); // Stop loading if there's an error
-          console.error("Error verifying email:", error.message);
-          alert("An error occurred while verifying the email.");
-        });
-    } else {
-      setIsLoading(false); // Stop loading if no code is provided
-      alert("Invalid or missing verification code.");
-    }
-  }, [oobCode, navigate]);
+    const verifyEmail = async () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const email = urlParams.get("email");
+      const token = urlParams.get("token");
+
+      if (!email || !token || token !== btoa(email)) {
+        setMessage("Invalid or expired verification link.");
+        setLoading(false);
+        return;
+      }
+
+      try {
+        const emailQuery = query(
+          collection(db, "nofa_egypt_mail_list"),
+          where("email", "==", email)
+        );
+        const emailSnapshot = await getDocs(emailQuery);
+
+        if (!emailSnapshot.empty) {
+          setMessage("This email address is already verified.");
+        } else {
+          await addDoc(collection(db, "nofa_egypt_mail_list"), {
+            email,
+          });
+
+          setMessage(
+            "Email verified successfully! You have been added to our mailing list."
+          );
+        }
+
+        setTimeout(() => navigate("/"), 5000);
+      } catch (error) {
+        console.error("Error verifying email: ", error);
+        setMessage("Error verifying email. Please try again later.");
+      }
+
+      setLoading(false);
+    };
+
+    verifyEmail();
+  }, [db, navigate]);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-      <h1 className="text-4xl font-bold text-blue-500 mb-4">
-        Verify Your Email
-      </h1>
-      <p className="text-lg text-gray-700 mb-4">
-        Please wait while we verify your email...
-      </p>
-      {isLoading ? (
-        <div className="animate-spin rounded-full h-12 w-12 border-t-4 border-blue-500"></div> // Loading spinner
-      ) : isVerified ? (
-        <FiCheckCircle className="text-green-500 text-6xl" /> // Green check icon
-      ) : (
-        <p className="text-red-500">Verification failed. Please try again.</p>
-      )}
+    <div className="flex justify-center items-center min-h-screen">
+      <div className="w-full max-w-md bg-white p-6 rounded-md shadow-md text-center">
+        <h2 className="text-2xl font-bold mb-4">Email Verification</h2>
+        {loading ? (
+          <div className="flex justify-center">
+            <div className="loader ease-linear rounded-full border-8 border-t-8 border-gray-200 h-12 w-12"></div>
+          </div>
+        ) : (
+          <p>{message}</p>
+        )}
+      </div>
     </div>
   );
 };

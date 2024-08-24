@@ -1,205 +1,155 @@
-import React, { useState } from "react";
-import { getAuth } from "firebase/auth";
-import { getFirestore, collection, addDoc, doc } from "firebase/firestore";
+import React, { useState, useEffect } from "react";
+import { useAuth } from "../../contexts/authContext";
+import { db } from "../../firebase/firebase";
+import { collection, getDocs } from "firebase/firestore";
+import emailjs from "emailjs-com";
 
 const EmailForm = () => {
-  const [to, setTo] = useState("");
-  const [from, setFrom] = useState("");
-  const [cc, setCc] = useState("");
-  const [bcc, setBcc] = useState("");
+  const { currentUser } = useAuth();
+  const [toEmails, setToEmails] = useState([]);
   const [subject, setSubject] = useState("");
+  const [body, setBody] = useState("");
+  const [attachments, setAttachments] = useState([]);
+  const [links, setLinks] = useState([]);
   const [message, setMessage] = useState("");
-  const [file, setFile] = useState(null);
-  const [link, setLink] = useState("");
-  const [status, setStatus] = useState("");
+  const [isSuccess, setIsSuccess] = useState(null);
 
-  const auth = getAuth();
-  const db = getFirestore();
-  const user = auth.currentUser;
+  useEffect(() => {
+    const fetchEmails = async () => {
+      const emailList = [];
+      const querySnapshot = await getDocs(
+        collection(db, "nofa_egypt_mail_list")
+      );
+      querySnapshot.forEach((doc) => {
+        emailList.push(doc.data().email);
+      });
+      setToEmails(emailList);
+    };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+    fetchEmails();
+  }, []);
 
-    if (!user) {
-      setStatus("You need to be logged in to send an email.");
+  const handleFileChange = (e) => {
+    setAttachments([...e.target.files]);
+  };
+
+  const handleLinkChange = (e) => {
+    setLinks(
+      e.target.value
+        .split("\n")
+        .map((link) => link.trim())
+        .filter((link) => link)
+    );
+  };
+
+  const sendEmail = async () => {
+    if (!currentUser) {
+      alert("You must be logged in to send an email.");
       return;
     }
 
     try {
-      const emailData = {
-        to,
-        from,
-        cc,
-        bcc,
-        subject,
-        message: `${message}\n\nLink: ${link}`,
-        sender: user.email,
-        timestamp: new Date(),
+      // Format the formData for EmailJS
+      const formData = {
+        email_address: toEmails.join(", "),
+        subject_title: subject,
+        body: body,
+        links: links.join("\n"), // Ensure this is a single string separated by new lines
+        attachments: attachments.map((file) => file.name).join(", ") // Ensure this is a single string separated by commas
       };
 
-      console.log("Email data:", emailData);
+      const response = await emailjs.send(
+        "service_vo4ojzm",
+        "template_vp6cnje",
+        formData,
+        "V-7vGAniLRldJKTD0"
+      );
 
-      await addDoc(collection(db, "sent_emails"), emailData);
+      console.log("Email sent successfully:", response); // Log response for debugging
 
-      if (file) {
-        // Implement file upload to Firebase Storage here
-        console.log("File selected:", file);
-        // const fileRef = doc(collection(db, "email_attachments")); // Save file reference
-        // Upload file and get file URL
-      }
+      setMessage("Email sent successfully!");
+      setIsSuccess(true);
 
-      setTo("");
-      setFrom("");
-      setCc("");
-      setBcc("");
+      // Clear form fields except 'To' field
       setSubject("");
-      setMessage("");
-      setFile(null);
-      setLink("");
-      setStatus("Email sent successfully!");
+      setBody("");
+      setAttachments([]);
+      setLinks([]);
     } catch (error) {
-      console.error("Error sending email: ", error.message);
-      setStatus("Failed to send email.");
+      console.error("Error sending email:", error);
+
+      const errorMessage = error.text || "An unknown error occurred.";
+      setMessage("Error sending email: " + errorMessage);
+      setIsSuccess(false);
     }
   };
 
   return (
-    <div className="p-6 max-w-2xl mx-auto bg-white shadow-md rounded-lg">
-      <h2 className="text-2xl font-bold mb-4">Send a New Email</h2>
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <div>
-          <label
-            htmlFor="from"
-            className="block text-sm font-medium text-gray-700"
-          >
-            From
-          </label>
-          <input
-            type="email"
-            id="from"
-            value={from}
-            onChange={(e) => setFrom(e.target.value)}
-            className="mt-1 p-2 border border-gray-300 rounded-md w-full"
-            required
-          />
-        </div>
-        <div>
-          <label
-            htmlFor="to"
-            className="block text-sm font-medium text-gray-700"
-          >
-            To
-          </label>
-          <input
-            type="email"
-            id="to"
-            value={to}
-            onChange={(e) => setTo(e.target.value)}
-            className="mt-1 p-2 border border-gray-300 rounded-md w-full"
-            required
-          />
-        </div>
-        <div>
-          <label
-            htmlFor="cc"
-            className="block text-sm font-medium text-gray-700"
-          >
-            CC
-          </label>
-          <input
-            type="text"
-            id="cc"
-            value={cc}
-            onChange={(e) => setCc(e.target.value)}
-            className="mt-1 p-2 border border-gray-300 rounded-md w-full"
-          />
-        </div>
-        <div>
-          <label
-            htmlFor="bcc"
-            className="block text-sm font-medium text-gray-700"
-          >
-            BCC
-          </label>
-          <input
-            type="text"
-            id="bcc"
-            value={bcc}
-            onChange={(e) => setBcc(e.target.value)}
-            className="mt-1 p-2 border border-gray-300 rounded-md w-full"
-          />
-        </div>
-        <div>
-          <label
-            htmlFor="subject"
-            className="block text-sm font-medium text-gray-700"
-          >
-            Subject
-          </label>
-          <input
-            type="text"
-            id="subject"
-            value={subject}
-            onChange={(e) => setSubject(e.target.value)}
-            className="mt-1 p-2 border border-gray-300 rounded-md w-full"
-            required
-          />
-        </div>
-        <div>
-          <label
-            htmlFor="message"
-            className="block text-sm font-medium text-gray-700"
-          >
-            Message
-          </label>
-          <textarea
-            id="message"
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            rows="6"
-            className="mt-1 p-2 border border-gray-300 rounded-md w-full"
-            required
-          />
-        </div>
-        <div>
-          <label
-            htmlFor="file"
-            className="block text-sm font-medium text-gray-700"
-          >
-            Attach File
-          </label>
-          <input
-            type="file"
-            id="file"
-            onChange={(e) => setFile(e.target.files[0])}
-            className="mt-1 p-2 border border-gray-300 rounded-md w-full"
-          />
-        </div>
-        <div>
-          <label
-            htmlFor="link"
-            className="block text-sm font-medium text-gray-700"
-          >
-            Link
-          </label>
-          <input
-            type="text"
-            id="link"
-            value={link}
-            onChange={(e) => setLink(e.target.value)}
-            className="mt-1 p-2 border border-gray-300 rounded-md w-full"
-          />
-        </div>
-        <button
-          type="submit"
-          className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
+    <div className="max-w-lg mx-auto p-4 bg-white shadow-md rounded-lg">
+      <h2 className="text-xl font-bold mb-4">Send New Email</h2>
+      {message && (
+        <div
+          className={`mb-4 p-3 rounded-md ${
+            isSuccess
+              ? "bg-green-100 text-green-700"
+              : "bg-red-100 text-red-700"
+          }`}
         >
-          Send
-        </button>
-        {status && (
-          <p className="mt-4 text-center text-sm text-green-600">{status}</p>
-        )}
-      </form>
+          {isSuccess ? "✔️ " : "❌ "} {message}
+        </div>
+      )}
+      <div className="mb-4">
+        <label className="block text-sm font-medium">To:</label>
+        <input
+          type="text"
+          value={toEmails.join(", ")}
+          onChange={(e) => setToEmails(e.target.value.split(", "))}
+          className="w-full p-2 border rounded-md"
+        />
+      </div>
+      <div className="mb-4">
+        <label className="block text-sm font-medium">Subject:</label>
+        <input
+          type="text"
+          value={subject}
+          onChange={(e) => setSubject(e.target.value)}
+          className="w-full p-2 border rounded-md"
+        />
+      </div>
+      <div className="mb-4">
+        <label className="block text-sm font-medium">Body:</label>
+        <textarea
+          value={body}
+          onChange={(e) => setBody(e.target.value)}
+          className="w-full p-2 border rounded-md"
+        />
+      </div>
+      <div className="mb-4">
+        <label className="block text-sm font-medium">
+          Attachments (optional):
+        </label>
+        <input
+          type="file"
+          multiple
+          onChange={handleFileChange}
+          className="w-full p-2 border rounded-md"
+        />
+      </div>
+      <div className="mb-4">
+        <label className="block text-sm font-medium">
+          Links (one per line, optional):
+        </label>
+        <textarea
+          onChange={handleLinkChange}
+          className="w-full p-2 border rounded-md"
+        />
+      </div>
+      <button
+        onClick={sendEmail}
+        className="w-full py-2 bg-primary text-white rounded-md hover:bg-primary/80"
+      >
+        Send Email
+      </button>
     </div>
   );
 };
