@@ -31,7 +31,7 @@ const Newsletter = () => {
         "V-7vGAniLRldJKTD0"
       );
 
-      setMessage("Verification email sent! Please check your inbox.");
+      setMessage("Verification email sent! Please check your inbox or your spam");
       setEmail("");
     } catch (error) {
       console.error("Error sending verification email: ", error);
