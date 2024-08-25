@@ -152,12 +152,6 @@ export const AvailableWoodSpecies = [
       aosDelay: "0",
       delayTitle: "100",
     },
-    {
-      src: "https://firebasestorage.googleapis.com/v0/b/nofa-egypt.appspot.com/o/woodColors%2FCherry.png?alt=media&token=b452e19e-fe67-4130-9640-314cc2120d30",
-      title: "Cherry",
-      aosDelay: "100",
-      delayTitle: "200",
-    },
   ],
   [
     {
@@ -172,12 +166,6 @@ export const AvailableWoodSpecies = [
       aosDelay: "300",
       delayTitle: "400",
     },
-    {
-      src: "https://firebasestorage.googleapis.com/v0/b/nofa-egypt.appspot.com/o/woodColors%2FMahogany.png?alt=media&token=ed1f4db9-28a0-4d49-9868-5f15c262fbae",
-      title: "Mahogany",
-      aosDelay: "400",
-      delayTitle: "500",
-    },
   ],
   [
     {
@@ -185,12 +173,6 @@ export const AvailableWoodSpecies = [
       title: "Padouk",
       aosDelay: "500",
       delayTitle: "600",
-    },
-    {
-      src: "https://firebasestorage.googleapis.com/v0/b/nofa-egypt.appspot.com/o/woodColors%2FPanga.png?alt=media&token=06750ac9-4bfe-4bac-bdb0-89345b54c698",
-      title: "Panga",
-      aosDelay: "600",
-      delayTitle: "700",
     },
   ],
   [
@@ -201,16 +183,19 @@ export const AvailableWoodSpecies = [
       delayTitle: "800",
     },
     {
-      text: "Our Distinctive Wood Species",
-      isCenter: true,
-      aosDelay: "800",
-      delayTitle: "900",
+      src: "https://firebasestorage.googleapis.com/v0/b/nofa-egypt.appspot.com/o/woodColors%2FPine.png?alt=media&token=cfbb0e07-1437-4e8a-89d3-cf47a688b1d8",
+      title: "Pine",
+      aosDelay: "700",
+      delayTitle: "800",
     },
+  ],
+
+  [
     {
-      src: "https://firebasestorage.googleapis.com/v0/b/nofa-egypt.appspot.com/o/woodColors%2FRedOak.png?alt=media&token=d6582540-05c5-4ab2-9b88-25049e0fa99f",
-      title: "Red Oak",
-      aosDelay: "900",
-      delayTitle: "1000",
+      src: "https://firebasestorage.googleapis.com/v0/b/nofa-egypt.appspot.com/o/woodColors%2FPine.png?alt=media&token=cfbb0e07-1437-4e8a-89d3-cf47a688b1d8",
+      title: "Pine",
+      aosDelay: "700",
+      delayTitle: "800",
     },
   ],
 ];
