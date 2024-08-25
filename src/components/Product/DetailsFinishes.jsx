@@ -18,20 +18,20 @@ const DetailsFinishes = ({ finish, onBack }) => {
           <div className="flex flex-row md:flex-col space-x-3  flex-wrap justify-center">
             {/* Name and Icon Close  */}
             <div className="flex justify-between">
-              <p className="text-center font-bold text-2xl mb-2 translate-x-2 translate-y--2 lg:translate-x-1/2 ">
+              <p className="text-center font-bold text-2xl mb-2 translate-x-2 translate-y--2  md:mx-6 items-center lg:translate-x-1/2 ">
                 {finish.name}
               </p>
               <FontAwesomeIcon
                 icon={faSquareXmark}
                 style={{ fontSize: "25px" }}
-                className="text-red-600 text-bold text-lg cursor-pointer  translate-x-2 md:translate-x-2 "
+                className="text-red-600 text-bold text-lg cursor-pointer  translate-x-2  "
                 onClick={onBack}
               />
             </div>
             {/* Div  content under the name card  */}
-            <div className="flex gap-5 flex-col lg:flex-row  md:flex-col">
+            <div className="flex lg:gap-5 md:gap-2 flex-col lg:flex-row  md:flex-col">
               {/* Images Left  */}
-              <div className="flex flex-row justify-center md:flex-row lg:flex-col flex-wrap gap-2 mb-0 md:mb-10">
+              <div className="flex flex-row justify-center md:flex-row lg:flex-col flex-wrap gap-2 mb-0 lg:mb-16 ">
                 {finish.gallery.map((img, idx) => (
                   <img
                     key={idx}
