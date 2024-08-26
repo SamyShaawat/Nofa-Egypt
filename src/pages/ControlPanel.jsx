@@ -1,11 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { collection, getDocs, deleteDoc, updateDoc, doc } from "firebase/firestore";
+import {
+  collection,
+  getDocs,
+  deleteDoc,
+  updateDoc,
+  doc,
+} from "firebase/firestore";
 import { db } from "../firebase/firebase";
 import ControlPanelMenu from "../components/Control Panel/ControlPanelMenu";
 import EmailList from "../components/Control Panel/EmailList.jsx";
 import EmailForm from "../components/Control Panel/EmailForm.jsx";
 import EventsList from "../components/Control Panel/EventsList.jsx";
 import EventsForm from "../components/Control Panel/EventsForm.jsx";
+import { Helmet } from "react-helmet";
 
 const ControlPanel = () => {
   const [emails, setEmails] = useState([]);
@@ -71,15 +78,20 @@ const ControlPanel = () => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row p-8 md:p-10 lg:p-12 max-w-7xl mx-auto space-y-8 md:space-y-0 md:space-x-8">
-      <ControlPanelMenu
-        selectedSection={selectedSection}
-        setSelectedSection={setSelectedSection}
-      />
-      <div className="w-full md:w-3/4 lg:w-4/5 bg-gradient-to-b from-white to-gray-100 p-8 rounded-lg shadow-2xl">
-        {renderSection()}
+    <>
+      <Helmet>
+        <title>Nofa Egypt | Control Panel</title>
+      </Helmet>
+      <div className="flex flex-col md:flex-row mt-32 p-8 md:p-10 lg:p-12 max-w-7xl mx-auto space-y-8 md:space-y-0 md:space-x-8">
+        <ControlPanelMenu
+          selectedSection={selectedSection}
+          setSelectedSection={setSelectedSection}
+        />
+        <div className="w-full md:w-3/4 lg:w-4/5 bg-gradient-to-b from-white to-gray-100 p-8 rounded-lg shadow-2xl border-2 ">
+          {renderSection()}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

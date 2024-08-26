@@ -8,7 +8,7 @@ const EventsNewsletter = () => {
   return (
     <>
       <Helmet>
-        <title>Nofa Egypt | Events & News</title>
+        <title>Nofa Egypt | Events & Newsletter</title>
       </Helmet>
       <EventsHero />
       <Newsletter />
