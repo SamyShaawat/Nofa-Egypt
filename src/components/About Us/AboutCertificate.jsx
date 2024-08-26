@@ -2,7 +2,7 @@ import React from "react";
 
 const AboutCertificate = ({ onCertificateClick }) => {
   return (
-    <div className="relative p-6 lg:px-8 lg:py-2 lg:mx-auto lg:max-w-4xl flex flex-col sm:flex-row gap-5 items-center mb-10 inline-block">
+    <div className="relative p-6 lg:px-8 lg:py-2 lg:mx-auto lg:max-w-4xl flex flex-col sm:flex-row gap-5 items-center mb-10 ">
       {/* ISO Image with Hover Effect */}
       <div className="relative group">
         <img
