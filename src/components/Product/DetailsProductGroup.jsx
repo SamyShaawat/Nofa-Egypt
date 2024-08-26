@@ -20,19 +20,20 @@ const DetailsProductGroup = ({ product, onBack }) => {
         <div className="flex lg:translate-x-1/2 md:translate-x-1/2 bg-white flex-col md:flex-row md:gap-5 gap-2 border-2 border-primary rounded-lg shadow-md p-4 ">
           <div className="flex flex-row md:flex-col space-x-3  flex-wrap justify-center">
             {/* Name and Icon Close  */}
-            {/* <div className="flex justify-between "> */}
-            <p className=" text-center font-bold text-2xl mb-4 ">
-              <span className="text-center">{product.name}</span>
-              <FontAwesomeIcon
-                icon={faSquareXmark}
-                style={{ fontSize: "25px" }}
-                // translate-x-14 md:translate-x-2
-                className="text-red-600 text-bold text-lg cursor-pointer translate-x-16 lg:translate-x-56 md:translate-x-20    "
-                onClick={onBack}
-              />
-            </p>
-
-            {/* </div> */}
+            <div className="flex justify-between mb-4">
+              <div className="text-center font-bold text-2xl translate-x-0 lg:translate-x-64 ">
+                {product.name}
+              </div>
+              <div>
+                <FontAwesomeIcon
+                  icon={faSquareXmark}
+                  style={{ fontSize: "25px" }}
+                  // translate-x-10 lg:translate-x-44 md:translate-x-10
+                  className="text-red-600  text-bold text-lg cursor-pointer "
+                  onClick={onBack}
+                />
+              </div>
+            </div>
             {/* Div  content under the name card  */}
             <div className="flex lg:gap-5 md:gap-2 gap-2 flex-col lg:flex-row  md:flex-col">
               {/* Image Left */}
