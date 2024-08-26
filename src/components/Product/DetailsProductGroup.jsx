@@ -4,7 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSquareXmark } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 import { AvailableWoodSpecies } from "../../data/constants";
-// import { AvailableWoodSpecies } from "../../data/constants";
+// import AvailableWood from "./AvailableWood";
+
 const DetailsProductGroup = ({ product, onBack }) => {
   const navigate = useNavigate();
   const handleContactUsClick = () => {
@@ -19,17 +20,19 @@ const DetailsProductGroup = ({ product, onBack }) => {
         <div className="flex lg:translate-x-1/2 md:translate-x-1/2 bg-white flex-col md:flex-row md:gap-5 gap-2 border-2 border-primary rounded-lg shadow-md p-4 ">
           <div className="flex flex-row md:flex-col space-x-3  flex-wrap justify-center">
             {/* Name and Icon Close  */}
-            <div className="flex justify-between ">
-              <p className="text-center font-bold text-2xl mb-2 translate-x-4 translate-y--2 md:ml-20">
-                {product.name}
-              </p>
+            {/* <div className="flex justify-between "> */}
+            <p className=" text-center font-bold text-2xl mb-4 ">
+              <span className="text-center">{product.name}</span>
               <FontAwesomeIcon
                 icon={faSquareXmark}
                 style={{ fontSize: "25px" }}
-                className="text-red-600 text-bold text-lg cursor-pointer  translate-x-14 md:translate-x-2 "
+                // translate-x-14 md:translate-x-2
+                className="text-red-600 text-bold text-lg cursor-pointer translate-x-16 lg:translate-x-56 md:translate-x-20    "
                 onClick={onBack}
               />
-            </div>
+            </p>
+
+            {/* </div> */}
             {/* Div  content under the name card  */}
             <div className="flex lg:gap-5 md:gap-2 gap-2 flex-col lg:flex-row  md:flex-col">
               {/* Image Left */}
@@ -78,6 +81,7 @@ const DetailsProductGroup = ({ product, onBack }) => {
                   <h3 className="text-xl font-semibold">
                     Available Wood Species
                   </h3>
+
                   {/*  AvailableWoodSpecies */}
                   <div className="flex flex-col justify-center items-center mt-3 w-full px-4">
                     {/* Original layout preserved for laptop screens */}
@@ -123,7 +127,6 @@ const DetailsProductGroup = ({ product, onBack }) => {
                     </div>
                   </div>
                 </div>
-                {/* End AvailableWoodSpecies */}
               </div>
             </div>
           </div>

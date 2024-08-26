@@ -145,6 +145,8 @@ export const woodSpeciesImages = [
   ],
 ];
 export const AvailableWoodSpecies = [
+  // array 1
+
   [
     {
       src: "https://firebasestorage.googleapis.com/v0/b/nofa-egypt.appspot.com/o/woodColors%2FAfromosia.png?alt=media&token=491013bb-76e1-4091-946b-fae138fed5d3",
@@ -198,6 +200,8 @@ export const AvailableWoodSpecies = [
       delayTitle: "800",
     },
   ],
+
+  // end array 1
 ];
 // In page AboutUs
 export const services = [
