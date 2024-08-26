@@ -3,7 +3,7 @@
 const AboutHero = () => {
   return (
     <div
-      className="relative w-full h-[350px] bg-cover bg-center"
+      className="relative w-full h-[350px] bg-cover mt-32 bg-center"
       style={{
         backgroundImage:
           "url(https://firebasestorage.googleapis.com/v0/b/nofa-egypt.appspot.com/o/aboutUs%2FaboutImage_1.png?alt=media&token=8d07b471-e809-4194-b506-1a9e2bbcf888)",

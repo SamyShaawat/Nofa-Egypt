@@ -35,7 +35,7 @@ const HeroHomeCarousel = ({ images }) => {
   };
 
   return (
-    <div className="w-full p-4">
+    <div className="w-full p-4 mt-8">
       <Slider {...settings}>
         {images.map((img, idx) => (
           <div

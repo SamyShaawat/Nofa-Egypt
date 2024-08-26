@@ -35,17 +35,16 @@ const Partners = () => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
     slidesToShow: 1, // Default to 1 slide per view
     slidesToScroll: 1,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 1500,
   };
 
   return (
-    <div data-aos="fade-up" data-aos-delay="200" className="bg-gray-200">
+    <div data-aos="fade-up" data-aos-delay="200" className="">
       <section className="container mx-auto px-4 py-8 relative">
         {/* Title */}
         <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-8">
@@ -54,11 +53,11 @@ const Partners = () => {
 
         {/* Large screens (laptops) */}
         <div className="hidden lg:block">
-          <Slider {...settings} slidesToShow={5} slidesToScroll={1}>
+          <Slider {...settings} slidesToShow={6} slidesToScroll={1} dots={false} nextArrow={false} prevArrow={false}>
             {partners.map((partner) => (
               <div
                 key={partner.id}
-                className="p-4 flex justify-center items-center"
+                className="py-10 flex justify-center items-center  transform transition-transform duration-300 hover:scale-150 hover:animate-shake relative overflow-visible" // Added relative positioning
               >
                 <a
                   data-aos="fade-up"
@@ -66,12 +65,12 @@ const Partners = () => {
                   href={partner.linkWebsite}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-white flex items-center justify-center rounded-full h-52 w-52 mx-auto cursor-pointer duration-300 hover:scale-110 border-2 border-primary"
+                  className="bg-white flex items-center justify-center rounded-full h-36 w-36 mx-auto cursor-pointer duration-300  border-2 border-slate-400" // Added relative and overflow-visible
                 >
                   <img
                     src={partner.logo}
                     alt={partner.name}
-                    className="w-32 h-32 rounded-full object-contain"
+                    className="w-32 h-32 rounded-full object-contain " // Added transform and transition
                   />
                 </a>
               </div>
@@ -85,18 +84,18 @@ const Partners = () => {
             {partners.map((partner) => (
               <div
                 key={partner.id}
-                className="p-4 flex justify-center items-center"
+                className="py-10 flex justify-center items-center relative  transform transition-transform duration-300 hover:scale-125 hover:animate-shake  overflow-visible" // Added relative positioning
               >
                 <a
                   href={partner.linkWebsite}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-white flex items-center justify-center rounded-full h-40 w-40 mx-auto cursor-pointer duration-300 hover:scale-110 border-2 border-primary"
+                  className="bg-white flex items-center justify-center rounded-full h-40 w-40 mx-auto cursor-pointer duration-300 relative overflow-visible border-2 border-slate-400" // Added relative and overflow-visible
                 >
                   <img
                     src={partner.logo}
                     alt={partner.name}
-                    className="w-24 h-24 rounded-full object-contain"
+                    className="w-32 h-32 rounded-full object-contain" // Added transform and transition
                   />
                 </a>
               </div>
@@ -110,18 +109,18 @@ const Partners = () => {
             {partners.map((partner) => (
               <div
                 key={partner.id}
-                className="p-4 flex justify-center items-center"
+                className="py-10 flex justify-center items-center relative transform transition-transform duration-300 hover:scale-125 hover:animate-shake  overflow-visible" // Added relative positioning
               >
                 <a
                   href={partner.linkWebsite}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-white flex items-center justify-center rounded-full h-40 w-40 mx-auto cursor-pointer duration-300 hover:scale-110 border-2 border-primary"
+                  className="bg-white flex items-center justify-center rounded-full h-40 w-40 mx-auto cursor-pointer duration-300 relative overflow-visible border-2 border-slate-400" // Added relative and overflow-visible
                 >
                   <img
                     src={partner.logo}
                     alt={partner.name}
-                    className="w-20 h-20 rounded-full object-contain"
+                    className="w-28 h-28 rounded-full object-contain" // Added transform and transition
                   />
                 </a>
               </div>

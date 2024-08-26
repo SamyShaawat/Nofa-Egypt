@@ -33,12 +33,24 @@ li {
   height: 50px;
 }
 
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-2px);
+  }
+  50% {
+    transform: translateX(2px);
+  }
+  75% {
+    transform: translateX(-2px);
+  }
+}
 
-
-
-
-
-
+.hover\\:animate-shake:hover {
+  animation: shake 0.5s ease-in-out;
+}
 
 @media (min-width: 768px) {
   .client-name {

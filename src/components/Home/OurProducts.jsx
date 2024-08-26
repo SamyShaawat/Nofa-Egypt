@@ -17,8 +17,11 @@ const OurProducts = () => {
       <div className="md:hidden grid grid-cols-4 gap-4">
         {woodSpeciesImages.flat().map(
           (item, index) =>
-            !item.isCenter && ( // Skip the "Our Products" text item
-              <div key={index} className="relative w-20 h-20 sm:w-24 sm:h-24">
+            !item.isCenter && (
+              <div
+                key={index}
+                className="relative w-20 h-20 sm:w-24 sm:h-24 transition-transform transform hover:scale-150 hover:z-10 hover:animate-shake"
+              >
                 <img
                   data-aos="fade-up"
                   data-aos-delay={item.aosDelay}
@@ -45,15 +48,13 @@ const OurProducts = () => {
         {woodSpeciesImages.map((column, columnIndex) => (
           <div
             key={columnIndex}
-            className={`flex flex-col justify-center items-center 
-                        space-y-4 mb-4 w-full md:w-auto`}
+            className="flex flex-col justify-center items-center space-y-4 mb-4 w-full md:w-auto"
           >
             {column.map((item, itemIndex) =>
               item.isCenter ? (
                 <div
                   key={itemIndex}
-                  className="flex justify-center items-center bg-transparent border border-white w-28 h-28 
-                             sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 rounded-full"
+                  className="flex justify-center items-center bg-transparent border border-white w-28 h-28 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 rounded-full"
                 >
                   <p
                     data-aos="fade-up"
@@ -66,11 +67,11 @@ const OurProducts = () => {
               ) : (
                 <div
                   key={itemIndex}
-                  className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32"
+                  className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 cursor-pointer transition-transform transform hover:scale-150 hover:z-10 hover:animate-shake"
                 >
                   <img
                     src={item.src}
-                    className="w-full h-full "
+                    className="w-full h-full"
                     alt={item.title}
                     data-aos="fade-up"
                     data-aos-delay={item.aosDelay}

@@ -7,6 +7,16 @@ export default {
   theme: {
 
     extend: {
+      keyframes: {
+        shake: {
+          '0%': { transform: 'translateX(-10px)' },
+          '50%': { transform: 'translateX(10px)' },
+          '100%': { transform: 'translateX(-10px)' },
+        },
+      },
+      animation: {
+        shake: 'shake 0.5s ease-in-out',
+      },
       screens: {
         'sm-max': { 'max': '765px' },
         // => @media (max-width: 639px) 

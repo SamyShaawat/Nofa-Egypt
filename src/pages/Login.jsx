@@ -26,7 +26,7 @@ const Login = () => {
   }
 
   return (
-    <div className="h-[400px] flex items-center justify-center bg-gray-100">
+    <div className="h-[400px] flex items-center mt-32 justify-center bg-gray-100">
       <div
         data-aos="zoom-in"
         data-aos-delay="200"
