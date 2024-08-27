@@ -246,7 +246,7 @@ export const productsgroups = [
       "Solid parquets 18 - 22 mm. Engineered parquets:17 mm top layer 6 mm 15 mm top layer ",
     link: "our-products",
     details: "View Details",
-    aosDelay: "0",
+    aosDelay: "100",
   },
   {
     name: "Mosaic Parquets",

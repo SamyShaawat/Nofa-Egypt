@@ -18,18 +18,18 @@ const ProductGroup = () => {
     <div className="relative flex flex-col items-center">
       {selectedProduct && (
         <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex justify-center items-center  z-50">
-          {/* <div className="flex justify-center"> */}
           <DetailsProductGroup
             product={selectedProduct}
             onBack={handleBackToProductsClick}
           />
-          {/* </div> */}
         </div>
       )}
       <div
         className={`flex flex-wrap justify-center gap-4 my-6 transition-opacity duration-300 ${
           selectedProduct ? " pointer-events-none" : "opacity-100"
         }`}
+        // data-aos="fade-up"
+        // data-aos-delay="200"
       >
         {productsgroups.map((product, index) => (
           <div
