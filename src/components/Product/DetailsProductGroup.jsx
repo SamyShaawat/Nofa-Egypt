@@ -3,8 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSquareXmark } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
-import { AvailableWoodSpecies } from "../../data/constants";
-// import AvailableWood from "./AvailableWood";
+import AvailableWood from "./AvailableWood";
 
 const DetailsProductGroup = ({ product, onBack }) => {
   const navigate = useNavigate();
@@ -15,7 +14,7 @@ const DetailsProductGroup = ({ product, onBack }) => {
 
   return (
     <div
-      className=" p-2 rounded-lg  mx-auto relative z-40 "
+      className=" p-1 rounded-lg  mx-auto relative z-40 "
       data-aos="fade-up"
       data-aos-delay="100"
     >
@@ -39,7 +38,7 @@ const DetailsProductGroup = ({ product, onBack }) => {
               </div>
             </div>
             {/* Div  content under the name card  */}
-            <div className="flex lg:gap-5 md:gap-2 gap-2 flex-col lg:flex-row  md:flex-col">
+            <div className="flex lg:gap-2 md:gap-2 gap-2 flex-col lg:flex-row  md:flex-col">
               {/* Image Left */}
               <div
                 className="flex flex-row justify-center md:flex-row lg:flex-col  flex-wrap gap-2 mb-0 lg:mb-20 "
@@ -51,8 +50,8 @@ const DetailsProductGroup = ({ product, onBack }) => {
                     key={idx}
                     src={img}
                     alt={`${product.name} ${idx + 1}`}
-                    className={`h-14 w-60 object-cover cursor-pointer ${
-                      selectedImage === img ? "border-2 border-blue-500" : ""
+                    className={` h-8 w-16 lg:h-14 lg:w-28 object-cover cursor-pointer rounded-lg  ${
+                      selectedImage === img ? "border-2 border-blue-600" : ""
                     }`}
                     onClick={() => setSelectedImage(img)}
                   />
@@ -60,7 +59,7 @@ const DetailsProductGroup = ({ product, onBack }) => {
               </div>
 
               {/* Single Image and Contact Button  */}
-              <div>
+              <div className="">
                 <img
                   src={selectedImage}
                   alt={product.name}
@@ -68,7 +67,7 @@ const DetailsProductGroup = ({ product, onBack }) => {
                 />
                 <div className="mt-2">
                   <button
-                    className="bg-primary text-white font-semibold px-4 py-2 rounded-full flex items-center  gap-2 w-full sm:w-auto hover:bg-primary/80 duration-300 text-sm sm:text-base lg:text-lg whitespace-nowrap"
+                    className="bg-primary text-white font-semibold px-4 py-2 rounded-full flex items-center  gap-2 w-full  hover:bg-primary/80 duration-300 text-sm sm:text-base lg:text-lg whitespace-nowrap"
                     onClick={handleContactUsClick}
                   >
                     Contact Us
@@ -76,8 +75,8 @@ const DetailsProductGroup = ({ product, onBack }) => {
                   </button>
                 </div>
               </div>
-              {/* Description , Specification and Available Wood Species */}
-              <div className="flex flex-col gap-8 ">
+              {/* Description , Specification and Component Available Wood Species */}
+              <div className="flex flex-col lg:gap-8 gap-1 ">
                 <div>
                   <h3 className="text-lg font-semibold ">Description</h3>
                   <p className="text-gray-600 p-1">{product.description}</p>
@@ -90,51 +89,11 @@ const DetailsProductGroup = ({ product, onBack }) => {
                   <h3 className="text-lg font-semibold">
                     Available Wood Species
                   </h3>
-
-                  {/*  AvailableWoodSpecies */}
-                  <div className="flex flex-col justify-center items-center mt-3 w-full px-4">
-                    {/* Original layout preserved for laptop screens */}
-                    <div className=" flex flex-row justify-center items-center w-full">
-                      {AvailableWoodSpecies.map((column, columnIndex) => (
-                        <div
-                          key={columnIndex}
-                          className={`flex flex-col justify-center items-center 
-                        space-y-1  w-full md:w-auto`}
-                        >
-                          {column.map(
-                            (item, itemIndex) => (
-                              // Div Contain Images And Title of image
-                              <div
-                                key={itemIndex}
-                                className="relative w-14 h-14  md:w-16 md:h-16 lg:w-20 lg:h-20"
-                              >
-                                {/* imagesss */}
-                                <img
-                                  src={item.src}
-                                  className="w-full h-full "
-                                  alt={item.title}
-                                  data-aos="fade-up"
-                                  data-aos-delay={item.aosDelay}
-                                />
-                                {/* Name OF image  */}
-                                <div className="absolute inset-0 flex items-center justify-center">
-                                  <p
-                                    data-aos="zoom-in"
-                                    data-aos-delay={item.delayTitle}
-                                    className="text-xs sm:text-xs md:text-xs lg:text-xs text-white "
-                                  >
-                                    {item.title}
-                                  </p>
-                                </div>
-                              </div>
-                            )
-                            //  End  Div Contain Images And Title of image
-                            //   )
-                          )}
-                        </div>
-                      ))}
-                    </div>
+                  {/* component AvailableWoodSpecies */}
+                  <div className="p-2">
+                    <AvailableWood />
                   </div>
+                  {/* End  AvailableWoodSpecies */}
                 </div>
               </div>
             </div>

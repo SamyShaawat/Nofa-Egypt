@@ -36,7 +36,7 @@ const DetailsFinishes = ({ finish, onBack }) => {
             </div>
 
             {/* Div  content under the name card  */}
-            <div className="flex lg:gap-5 md:gap-2 flex-col lg:flex-row  md:flex-col">
+            <div className="flex lg:gap-2 md:gap-2 flex-col lg:flex-row  md:flex-col">
               {/* Images Left  */}
               <div
                 className="flex flex-row justify-center md:flex-row lg:flex-col flex-wrap gap-2 mb-2 lg:mb-16 "
@@ -48,7 +48,7 @@ const DetailsFinishes = ({ finish, onBack }) => {
                     key={idx}
                     src={img}
                     alt={`${finish.name} ${idx + 1}`}
-                    className={`h-14 w-60  object-cover cursor-pointer ${
+                    className={`h-8 w-16 lg:h-14 lg:w-28 object-cover cursor-pointer rounded-lg ${
                       selectedImage === img ? "border-2 border-blue-500" : ""
                     }`}
                     onClick={() => setSelectedImage(img)}
