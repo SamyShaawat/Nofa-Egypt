@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useAuth } from "../../contexts/authContext";
 import { db } from "../../firebase/firebase";
 import { collection, getDocs } from "firebase/firestore";
-import emailjs from "emailjs-com";
 
 const EmailForm = () => {
   const { currentUser } = useAuth();
@@ -48,38 +47,39 @@ const EmailForm = () => {
       return;
     }
 
+    // Create FormData to handle file and data submission
+    const formData = new FormData();
+    formData.append("bcc", toEmails.join(", "));
+    formData.append("subject", subject);
+    formData.append("text", body);
+    formData.append("links", links.join("\n"));
+
+    // Append each attachment to the FormData
+    attachments.forEach((file) => {
+      formData.append("attachments", file);
+    });
+
     try {
-      // Format the formData for EmailJS
-      const formData = {
-        email_address: toEmails.join(", "),
-        subject_title: subject,
-        body: body,
-        links: links.join("\n"), // Ensure this is a single string separated by new lines
-        attachments: attachments.map((file) => file.name).join(", ") // Ensure this is a single string separated by commas
-      };
+      const response = await fetch("http://localhost:5000/send-email", {
+        method: "POST",
+        body: formData,
+      });
 
-      const response = await emailjs.send(
-        "service_vo4ojzm",
-        "template_vp6cnje",
-        formData,
-        "V-7vGAniLRldJKTD0"
-      );
-
-      console.log("Email sent successfully:", response); // Log response for debugging
-
-      setMessage("Email sent successfully!");
-      setIsSuccess(true);
-
-      // Clear form fields except 'To' field
-      setSubject("");
-      setBody("");
-      setAttachments([]);
-      setLinks([]);
+      if (response.ok) {
+        setMessage("Email sent successfully!");
+        setIsSuccess(true);
+        setSubject("");
+        setBody("");
+        setAttachments([]);
+        setLinks([]);
+      } else {
+        const errorText = await response.text();
+        setMessage("Error sending email: " + errorText);
+        setIsSuccess(false);
+      }
     } catch (error) {
       console.error("Error sending email:", error);
-
-      const errorMessage = error.text || "An unknown error occurred.";
-      setMessage("Error sending email: " + errorMessage);
+      setMessage("Error sending email: " + error.message);
       setIsSuccess(false);
     }
   };
