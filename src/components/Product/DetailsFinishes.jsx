@@ -25,7 +25,6 @@ const DetailsFinishes = ({ finish, onBack }) => {
                 <FontAwesomeIcon
                   icon={faSquareXmark}
                   style={{ fontSize: "25px" }}
-                  // translate-x-10 lg:translate-x-44 md:translate-x-10
                   className="text-red-600  text-bold text-lg cursor-pointer "
                   onClick={onBack}
                 />
