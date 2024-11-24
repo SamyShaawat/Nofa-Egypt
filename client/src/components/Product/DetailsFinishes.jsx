@@ -29,7 +29,11 @@ const DetailsFinishes = ({ finish, onBack }) => {
                 <FontAwesomeIcon
                   icon={faSquareXmark}
                   style={{ fontSize: "25px" }}
+<<<<<<< HEAD:client/src/components/Product/DetailsFinishes.jsx
                   className="text-red-600  text-bold text-lg cursor-pointer px-3  "
+=======
+                  className="text-red-600  text-bold text-lg cursor-pointer "
+>>>>>>> 2bbee74121d738d3905a91a7e3879dd6e4a3c20c:src/components/Product/DetailsFinishes.jsx
                   onClick={onBack}
                 />
               </div>
