@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100;9..40,200;9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900;9..40,1000&display=swap");
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
+
+body {
+  font-family: "DM Sans", sans-serif;
+}
+
+.active {
+  color: #17588e;
+  font-weight: 600;
+}
+
+.active-black {
+  color: black;
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+li {
+  list-style: none;
+}
+
+.logonavbar {
+  width: auto;
+  height: 50px;
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-2px);
+  }
+  50% {
+    transform: translateX(2px);
+  }
+  75% {
+    transform: translateX(-2px);
+  }
+}
+
+.hover\\:animate-shake:hover {
+  animation: shake 0.5s ease-in-out;
+}
+
+@media (min-width: 768px) {
+  .client-name {
+    font-size: 1.25rem /* 20px */;
+    line-height: 1.75rem /* 28px */;
+    width: 380px;
+  }
+}
+
+@media (min-width: 640px) {
+  .hero-section .container {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 639px) {
+  .hero-section .container {
+    flex-direction: column;
+  }
+}

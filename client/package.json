@@ -1,6 +1,6 @@
 {
     "name": "nofa-egypt",
-    "homepage": "http://nofaegypt.rowad.com/",
+    "homepage": "https://youssefaboelkhir19github.io/Nofa-Egypt",
     "private": true,
     "version": "0.0.0",
     "proxy": "http://localhost:5000",
@@ -10,7 +10,8 @@
         "build": "vite build",
         "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
         "preview": "vite preview",
-        "deploy": "firebase deploy"
+        "predeploy": "npm run build",
+  "deploy": "gh-pages -d build"
     },
     "dependencies": {
         "@emailjs/browser": "^4.4.1",
