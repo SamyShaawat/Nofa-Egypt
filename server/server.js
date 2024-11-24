@@ -13,7 +13,7 @@ const upload = multer(); // For handling file uploads
 app.use(express.json());
 
 app.use(cors({
-  origin: 'http://localhost:5173', // Your React app's origin
+  origin: 'http://localhost:5174', // Your React app's origin
   methods: 'GET,POST,PUT,DELETE',  // Allow specific methods
   allowedHeaders: 'Content-Type',  // Allow specific headers
 }));

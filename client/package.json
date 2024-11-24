@@ -1,6 +1,6 @@
 {
     "name": "nofa-egypt",
-    "homepage": "http://nofaegypt.com/",
+    "homepage": "http://nofaegypt.rowad.com/",
     "private": true,
     "version": "0.0.0",
     "proxy": "http://localhost:5000",
